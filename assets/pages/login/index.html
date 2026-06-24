@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login | Panaderia Chavala</title>
+    <link rel="icon" type="image/svg+xml" href="/assets/img/ic_icon.svg">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Quicksand:wght@500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/assets/pages/login/style_login.css?v=20260624-2">
+</head>
+<body>
+    <main class="login-page">
+        <section class="login-visual" aria-label="Panaderia Chavala">
+            <img src="/assets/img/lg_fondo.webp" alt="Equipo de Chavala en la pasteleria">
+        </section>
+
+        <section class="login-panel" aria-labelledby="login-title">
+            <div class="login-panel__content">
+                <a class="login-brand" href="/index.html" aria-label="Volver al inicio">
+                    <span>Chavala</span>
+                    <small>Panader&iacute;a & Pasteler&iacute;a</small>
+                </a>
+
+                <div class="login-copy">
+                    <h1 id="login-title">Bienvenido de nuevo</h1>
+                    <p>Por favor, ingresa tus credenciales para continuar.</p>
+                </div>
+
+                <form class="login-form" aria-label="Formulario de inicio de sesion">
+                    <label for="login-email">Correo Electr&oacute;nico</label>
+                    <input id="login-email" type="email" name="email" autocomplete="email">
+
+                    <label for="login-password">Contrase&ntilde;a</label>
+                    <input id="login-password" type="password" name="password" autocomplete="current-password">
+
+                    <div class="login-options">
+                        <label class="login-remember" for="login-remember">
+                            <input id="login-remember" type="checkbox" name="remember">
+                            <span>Recordarme</span>
+                        </label>
+                        <button class="login-link" type="button">&iquest;Olvidaste tu contrase&ntilde;a?</button>
+                    </div>
+
+                    <button class="login-submit" type="button">Iniciar Sesi&oacute;n</button>
+                </form>
+
+                <div class="login-register">
+                    <span>&iquest;No tienes cuenta?</span>
+                    <button class="login-link" type="button">Reg&iacute;strate</button>
+                </div>
+            </div>
+        </section>
+    </main>
+</body>
+</html>

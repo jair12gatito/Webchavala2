@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Catalogo | Panaderia Chavala</title>
+    <link rel="icon" type="image/svg+xml" href="/assets/img/ic_icon.svg">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Quicksand:wght@500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/css/style.css?v=20260623-5">
+    <link rel="stylesheet" href="/assets/pages/catalog/style_catalog.css">
+</head>
+<body>
+    <div data-include="/assets/pages/header.html"></div>
+
+    <main class="catalog-page">
+        <section class="catalog-hero" aria-labelledby="catalog-title">
+            <span class="catalog-hero__eyebrow">Hecho con amor</span>
+            <h1 id="catalog-title">Nuestro Cat&aacute;logo Artesanal</h1>
+            <p>Postres caseros preparados con cuidado, buenos ingredientes y ese toque dulce que acompa&ntilde;a bien cualquier antojo o celebraci&oacute;n.</p>
+        </section>
+
+        <section class="catalog-filter-bar" aria-label="Filtros del catalogo">
+            <button class="catalog-filter is-active" type="button" data-filter="all" aria-pressed="true">Todos</button>
+            <button class="catalog-filter" type="button" data-filter="pasteles" aria-pressed="false">Pasteles</button>
+            <button class="catalog-filter" type="button" data-filter="frutales" aria-pressed="false">Frutales</button>
+            <button class="catalog-filter" type="button" data-filter="clasicos" aria-pressed="false">Cl&aacute;sicos</button>
+            <button class="catalog-filter" type="button" data-filter="favoritos" aria-pressed="false">Favoritos</button>
+        </section>
+
+        <section class="catalog-products" aria-label="Productos del catalogo">
+            <div class="catalog-grid" id="catalogGrid" data-api-url="http://localhost:3000/api/productos">
+                <article class="catalog-card" data-category="pasteles frutales">
+                    <div class="catalog-card__media">
+                        <img src="https://mejorconsalud.as.com/wp-content/uploads/2015/04/bizcocho-arandanos1.jpg" alt="Pastel de arandanos con crema">
+                    </div>
+                    <div class="catalog-card__body">
+                        <h2>Pastel de ar&aacute;ndanos</h2>
+                        <p>Bizcocho suave con ar&aacute;ndanos, crema ligera y un sabor frutal que se siente fresco en cada porci&oacute;n.</p>
+                        <div class="catalog-card__bottom">
+                            <strong>S/ 30</strong>
+                            <a class="catalog-card__order" href="https://wa.me/51934344116?text=Hola%2C%20quiero%20consultar%20por%20el%20Pastel%20de%20arandanos." target="_blank" rel="noopener noreferrer" aria-label="Pedir Pastel de arandanos">+</a>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="catalog-card" data-category="pasteles frutales favoritos">
+                    <div class="catalog-card__media">
+                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQE8i1epLs-XqF0_Xcs34yzXfC3RSwLIyLPKg&s" alt="Pastel de frutos del bosque">
+                        <span class="catalog-card__badge">Favorito</span>
+                    </div>
+                    <div class="catalog-card__body">
+                        <h2>Pastel de Frutos del Bosque</h2>
+                        <p>Capas suaves con frutos rojos, crema delicada y un equilibrio rico entre dulce y &aacute;cido.</p>
+                        <div class="catalog-card__bottom">
+                            <strong>S/ 60</strong>
+                            <a class="catalog-card__order" href="https://wa.me/51934344116?text=Hola%2C%20quiero%20consultar%20por%20el%20Pastel%20de%20Frutos%20del%20Bosque." target="_blank" rel="noopener noreferrer" aria-label="Pedir Pastel de Frutos del Bosque">+</a>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="catalog-card" data-category="pasteles clasicos favoritos">
+                    <div class="catalog-card__media">
+                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRzu_E3RjOmCBWMqx3vDb2hn_u70GnJqsZfOqKWngp9Ww&s" alt="Pastel de tres leches">
+                        <span class="catalog-card__badge">Cl&aacute;sico</span>
+                    </div>
+                    <div class="catalog-card__body">
+                        <h2>Pastel de tres leches</h2>
+                        <p>H&uacute;medo, cremoso y bien casero, preparado para quienes aman un postre dulce sin complicarse.</p>
+                        <div class="catalog-card__bottom">
+                            <strong>S/ 48</strong>
+                            <a class="catalog-card__order" href="https://wa.me/51934344116?text=Hola%2C%20quiero%20consultar%20por%20el%20Pastel%20de%20tres%20leches." target="_blank" rel="noopener noreferrer" aria-label="Pedir Pastel de tres leches">+</a>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="catalog-card" data-category="pasteles clasicos">
+                    <div class="catalog-card__media">
+                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSjk0wiVxQNBYktCByUVk8JxYNFtLbafR1jy6iqP_v9Iw&s" alt="Pastel de moka">
+                    </div>
+                    <div class="catalog-card__body">
+                        <h2>Pastel de Moka</h2>
+                        <p>Crema de caf&eacute;, bizcocho tierno y un acabado suave para un sabor elegante y nada empalagoso.</p>
+                        <div class="catalog-card__bottom">
+                            <strong>S/ 67</strong>
+                            <a class="catalog-card__order" href="https://wa.me/51934344116?text=Hola%2C%20quiero%20consultar%20por%20el%20Pastel%20de%20Moka." target="_blank" rel="noopener noreferrer" aria-label="Pedir Pastel de Moka">+</a>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="catalog-card" data-category="pasteles clasicos favoritos">
+                    <div class="catalog-card__media">
+                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQy2YDhQhLNn4Rbe-svw36v3z0yLiFRlVAd4cXPwb7hLQ&s" alt="Pastel de selva negra">
+                        <span class="catalog-card__badge">Especial</span>
+                    </div>
+                    <div class="catalog-card__body">
+                        <h2>Pastel de selva negra</h2>
+                        <p>Chocolate, crema y cerezas en una combinaci&oacute;n cl&aacute;sica, intensa y perfecta para compartir.</p>
+                        <div class="catalog-card__bottom">
+                            <strong>S/ 56</strong>
+                            <a class="catalog-card__order" href="https://wa.me/51934344116?text=Hola%2C%20quiero%20consultar%20por%20el%20Pastel%20de%20selva%20negra." target="_blank" rel="noopener noreferrer" aria-label="Pedir Pastel de selva negra">+</a>
+                        </div>
+                    </div>
+                </article>
+            </div>
+        </section>
+    </main>
+
+    <div data-include="/assets/pages/footer.html"></div>
+    <script src="/js/main.js?v=20260623-4" defer></script>
+    <script src="/assets/pages/catalog/js_catalog.js?v=20260624" defer></script>
+</body>
+</html>

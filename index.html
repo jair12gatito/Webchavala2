@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Panaderia Chavala</title>
+    <link rel="icon" type="image/svg+xml" href="./assets/img/ic_icon.svg">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Quicksand:wght@500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./css/style.css?v=20260623-5">
+</head>
+
+<body>
+    <div data-include="/assets/pages/header.html"></div>
+
+    <main class="page-content">
+        <section class="hero" aria-label="Presentacion de Panaderia Chavala">
+            <video class="hero__video" autoplay muted loop playsinline preload="metadata">
+                <source src="./assets/video/intro.mp4" type="video/mp4">
+            </video>
+            <div class="hero__overlay"></div>
+
+            <div class="hero__content">
+                <span class="hero__eyebrow">Recetas Familiares</span>
+                <h1>Sabor Artesanal en Cada Mordida</h1>
+                <p>Descubre la magia de la reposteria tradicional, horneada diariamente con ingredientes seleccionados y mucho amor. Un rincon dulce para alegrar tu dia.</p>
+
+                <div class="hero__actions">
+                    <button class="hero__button hero__button--primary" type="button" data-scroll-target="servicios">Ver Menu</button>
+                    <button class="hero__button hero__button--secondary" type="button" data-scroll-target="nosotros">Nuestra Historia</button>
+                </div>
+            </div>
+        </section>
+
+        <section class="services" id="servicios" aria-labelledby="services-title">
+            <div class="section-heading">
+                <h2 id="services-title">Nuestros Servicios</h2>
+                <p>Preparaciones dulces y saladas para disfrutar, compartir y celebrar cualquier ocasion.</p>
+            </div>
+
+            <div class="services__grid">
+                <article class="service-card">
+                    <a class="service-card__media" href="#" aria-label="Pasteles personalizados">
+                        <img src="./assets/img/sv01_pastel.jpg" alt="Pastel personalizado decorado">
+                    </a>
+                    <div class="service-card__body">
+                        <h3>Pasteles personalizados</h3>
+                        <p>Diseños a medida para cumpleaños, aniversarios y momentos especiales.</p>
+                        <a class="service-card__action" href="/assets/pages/catalog/catalog.html">Ver catalogo</a>
+                    </div>
+                </article>
+
+                <article class="service-card">
+                    <a class="service-card__media" href="#" aria-label="Postres y Bocaditos">
+                        <img src="./assets/img/sv02_bocaditos.jpg" alt="Postres y bocaditos variados">
+                    </a>
+                    <div class="service-card__body">
+                        <h3>Postres y Bocaditos</h3>
+                        <p>Dulces pequeños, frescos y variados para mesas, reuniones y antojos.</p>
+                        <a class="service-card__action" href="/assets/pages/catalog/catalog.html">Ver catalogo</a>
+                    </div>
+                </article>
+
+                <article class="service-card">
+                    <a class="service-card__media" href="#" aria-label="Comida rapida y almuerzos">
+                        <img src="./assets/img/sv03_rapida.jpg" alt="Comida rapida y almuerzos servidos">
+                    </a>
+                    <div class="service-card__body">
+                        <h3>Comida rapida y almuerzos</h3>
+                        <p>Opciones sabrosas y practicas para resolver tu dia con buen sabor.</p>
+                        <a class="service-card__action" href="/assets/pages/catalog/catalog.html">Ver catalogo</a>
+                    </div>
+                </article>
+
+                <article class="service-card">
+                    <a class="service-card__media" href="#" aria-label="Atencion para eventos">
+                        <img src="./assets/img/sv04_eventos.jpg" alt="Mesa preparada para atencion de eventos">
+                    </a>
+                    <div class="service-card__body">
+                        <h3>Atencion para eventos</h3>
+                        <p>Produccion y acompañamiento para celebraciones, reuniones y pedidos especiales.</p>
+                        <a class="service-card__action" href="/assets/pages/catalog/catalog.html">Ver catalogo</a>
+                    </div>
+                </article>
+            </div>
+        </section>
+
+        <section class="about" id="nosotros" aria-labelledby="about-title">
+            <div class="about__inner">
+                <div class="about__media">
+                    <img src="./assets/img/nosotros.webp" alt="Equipo de Pasteleria Chavala preparando postres artesanales">
+                </div>
+
+                <div class="about__content">
+                    <span>Nuestra Esencia</span>
+                    <h2 id="about-title">M&aacute;s que una panader&iacute;a, somos una tradici&oacute;n</h2>
+                    <p>En Pasteler&iacute;a Chavala cada preparaci&oacute;n tiene algo de casa. Somos una pasteler&iacute;a artesanal dedicada a crear postres caseros y personalizados, cuidando el sabor, la textura y la presentaci&oacute;n desde el primer detalle.</p>
+                    <p>Trabajamos con ingredientes de calidad y recetas hechas con paciencia, porque sabemos que una torta, unos bocaditos o un dulce bien preparado pueden acompa&ntilde;ar desde una celebraci&oacute;n especial hasta un antojo de todos los d&iacute;as.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="visit" aria-labelledby="visit-title">
+            <div class="visit__card">
+                <div class="visit__content">
+                    <span class="visit__eyebrow">Encu&eacute;ntranos</span>
+                    <h2 id="visit-title">Vis&iacute;tanos</h2>
+                    <p>Te esperamos con panes reci&eacute;n horneados, postres caseros y ese aroma dulce que siempre provoca volver.</p>
+
+                    <div class="visit__details">
+                        <div class="visit__detail">
+                            <span class="visit__mark" aria-hidden="true"></span>
+                            <div>
+                                <h3>Nuestros locales</h3>
+                                <ul class="visit__locations" aria-label="Locales de Chavala">
+                                    <li>
+                                        <button class="visit__location-button" type="button" data-map-title="Mapa de Chavala - Av. Canada N1733" data-map-src="https://www.google.com/maps?q=CHAVALA%20Panaderia%20Pasteleria%20Av.%20Canada%201733%20San%20Luis&amp;output=embed">Av. Canad&aacute; N&deg;1733 - San Luis</button>
+                                        <a class="visit__location-link" href="https://www.google.com/maps/search/?api=1&query=CHAVALA%20Panaderia%20Pasteleria%20Av.%20Canada%201733%20San%20Luis" target="_blank" rel="noopener noreferrer">Ver mapa</a>
+                                    </li>
+                                    <li>
+                                        <button class="visit__location-button" type="button" data-map-title="Mapa de Chavala - Av. Aviacion N2327" data-map-src="https://www.google.com/maps?q=CHAVALA%20Panaderia%20Pasteleria%20Av.%20Aviacion%202327%20San%20Borja&amp;output=embed">Av. Aviaci&oacute;n N&deg;2327 - San Borja</button>
+                                        <a class="visit__location-link" href="https://www.google.com/maps/search/?api=1&query=CHAVALA%20Panaderia%20Pasteleria%20Av.%20Aviacion%202327%20San%20Borja" target="_blank" rel="noopener noreferrer">Ver mapa</a>
+                                    </li>
+                                    <li class="is-active">
+                                        <button class="visit__location-button is-active" type="button" aria-current="location" data-map-title="Mapa de Chavala - Av. San Juan N517" data-map-src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3901.5225274404506!2d-77.00811692536543!3d-12.076338188162776!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9105c629243139a1%3A0xe5b36c1ea9dfb59c!2sCHAVALA%20Panader%C3%ADa%20y%20Pasteler%C3%ADa%20-%20San%20Juan!5e0!3m2!1ses-419!2spe!4v1782255335922!5m2!1ses-419!2spe">Av. San Juan N&deg;517 - San Luis</button>
+                                        <a class="visit__location-link" href="https://www.google.com/maps/search/?api=1&query=CHAVALA%20Panaderia%20Pasteleria%20Av.%20San%20Juan%20517%20San%20Luis" target="_blank" rel="noopener noreferrer">Ver mapa</a>
+                                    </li>
+                                    <li>
+                                        <button class="visit__location-button" type="button" data-map-title="Mapa de Chavala - Calle Diego Fernandez N208" data-map-src="https://www.google.com/maps?q=CHAVALA%20Panaderia%20Pasteleria%20Calle%20Diego%20Fernandez%20208%20Salamanca&amp;output=embed">Calle Diego Fernandez N&deg;208 - Salamanca</button>
+                                        <a class="visit__location-link" href="https://www.google.com/maps/search/?api=1&query=CHAVALA%20Panaderia%20Pasteleria%20Calle%20Diego%20Fernandez%20208%20Salamanca" target="_blank" rel="noopener noreferrer">Ver mapa</a>
+                                    </li>
+                                    <li>
+                                        <button class="visit__location-button" type="button" data-map-title="Mapa de Chavala - Av. Los Quechuas N1221" data-map-src="https://www.google.com/maps?q=CHAVALA%20Panaderia%20Pasteleria%20Av.%20Los%20Quechuas%201221%20Salamanca&amp;output=embed">Av. Los Quechuas N&deg;1221 - Salamanca</button>
+                                        <a class="visit__location-link" href="https://www.google.com/maps/search/?api=1&query=CHAVALA%20Panaderia%20Pasteleria%20Av.%20Los%20Quechuas%201221%20Salamanca" target="_blank" rel="noopener noreferrer">Ver mapa</a>
+                                    </li>
+                                    <li>
+                                        <button class="visit__location-button" type="button" data-map-title="Mapa de Chavala - Av. Hermes N208" data-map-src="https://www.google.com/maps?q=CHAVALA%20Panaderia%20Pasteleria%20Av.%20Hermes%20208%20Salamanca&amp;output=embed">Av. Hermes N&deg;208 - Salamanca</button>
+                                        <a class="visit__location-link" href="https://www.google.com/maps/search/?api=1&query=CHAVALA%20Panaderia%20Pasteleria%20Av.%20Hermes%20208%20Salamanca" target="_blank" rel="noopener noreferrer">Ver mapa</a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <div class="visit__detail">
+                            <span class="visit__mark" aria-hidden="true"></span>
+                            <div>
+                                <h3>Horario</h3>
+                                <ul class="visit__schedule" aria-label="Horario de atencion">
+                                    <li><span>Lunes a Viernes</span><strong>8 a.m. - 11 p.m.</strong></li>
+                                    <li><span>S&aacute;bado y Domingo</span><strong>8 a.m. - 12 p.m.</strong></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="visit__map" aria-label="Mapa de CHAVALA Panaderia y Pasteleria - San Juan">
+                    <iframe title="Mapa de CHAVALA Panaderia y Pasteleria - San Juan" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3901.5225274404506!2d-77.00811692536543!3d-12.076338188162776!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9105c629243139a1%3A0xe5b36c1ea9dfb59c!2sCHAVALA%20Panader%C3%ADa%20y%20Pasteler%C3%ADa%20-%20San%20Juan!5e0!3m2!1ses-419!2spe!4v1782255335922!5m2!1ses-419!2spe" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="strict-origin-when-cross-origin"></iframe>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <div data-include="/assets/pages/footer.html"></div>
+    <script src="./js/main.js?v=20260623-4" defer></script>
+</body>
+</html>
