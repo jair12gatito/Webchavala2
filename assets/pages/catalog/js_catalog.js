@@ -138,7 +138,7 @@ const getProductBadge = (product) => {
 
 const createProductCard = (product) => {
     const name = product.nombre || product.name || "Producto Chavala";
-    const image = product.imagen || product.image || product.imageUrl || "/assets/img/ic_icon.svg";
+    const image = product.imagen_url || product.image_url || product.imagen || product.image || product.imageUrl || "/assets/img/ic_icon.svg";
     const description = getProductDescription(product);
     const price = formatPrice(product.precio ?? product.price);
     const categories = getProductCategories(product).join(" ");
@@ -199,7 +199,7 @@ const loadCatalogProducts = async () => {
         const response = await fetch(apiUrl);
 
         if (!response.ok) {
-            throw new Error("No se pudo cargar el catálogo desde MongoDB");
+            throw new Error("No se pudo cargar el catalogo desde Supabase");
         }
 
         const products = await response.json();

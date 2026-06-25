@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registro | Panaderia Chavala</title>
+    <link rel="icon" type="image/svg+xml" href="/assets/img/ic_icon.svg">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Quicksand:wght@500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/assets/pages/login/style_login.css?v=20260625-2">
+</head>
+<body>
+    <main class="auth-shell">
+        <a class="auth-home-link" href="/index.html">Volver al inicio</a>
+
+        <section class="register-page">
+            <div class="register-visual" aria-label="Panaderia Chavala">
+                <img src="/assets/img/lg_registro.webp" alt="Vitrina de postres de Panaderia Chavala">
+            </div>
+
+            <div class="register-panel" aria-labelledby="register-title">
+                <div class="register-panel__content">
+                    <a class="login-brand register-brand" href="/index.html" aria-label="Volver al inicio">
+                        <span>Chavala</span>
+                        <small>&Uacute;nete a nuestra familia de sabor.</small>
+                    </a>
+
+                    <form class="login-form register-form" aria-label="Formulario de registro">
+                        <label for="register-name">Nombre Completo</label>
+                        <input id="register-name" type="text" name="name" placeholder="Tu nombre" autocomplete="name">
+
+                        <label for="register-email">Correo Electr&oacute;nico</label>
+                        <input id="register-email" type="email" name="email" placeholder="tu@correo.com" autocomplete="email">
+
+                        <label for="register-password">Contrase&ntilde;a</label>
+                        <input id="register-password" type="password" name="password" placeholder="********" autocomplete="new-password">
+
+                        <label for="register-confirm">Confirmar Contrase&ntilde;a</label>
+                        <input id="register-confirm" type="password" name="confirm-password" placeholder="********" autocomplete="new-password">
+
+                        <label class="register-terms" for="register-terms">
+                            <input id="register-terms" type="checkbox" name="terms">
+                            <span>Acepto los <button class="login-link" type="button">t&eacute;rminos y condiciones</button> y la <button class="login-link" type="button">pol&iacute;tica de privacidad</button>.</span>
+                        </label>
+
+                        <button class="login-submit register-submit" type="button">Crear Cuenta <span aria-hidden="true">-&gt;</span></button>
+                    </form>
+
+                    <div class="login-register">
+                        <span>&iquest;Ya tienes cuenta?</span>
+                        <a class="login-link" href="/assets/pages/login/">Inicia sesi&oacute;n</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+</body>
+</html>
