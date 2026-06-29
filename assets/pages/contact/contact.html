@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contacto | Panaderia Chavala</title>
+    <link rel="icon" type="image/svg+xml" href="/assets/img/ic_icon.svg">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Quicksand:wght@500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/css/style.css?v=20260629-3">
+    <link rel="stylesheet" href="/assets/pages/contact/style_contact.css?v=20260629-6">
+</head>
+<body>
+    <div data-include="/assets/pages/header.html"></div>
+
+    <main class="contact-page">
+        <section class="contact-hero" aria-labelledby="contact-title">
+            <span class="contact-eyebrow">Estamos para ayudarte</span>
+            <h1 id="contact-title">Cont&aacute;ctanos</h1>
+            <p>Estamos aqu&iacute; para endulzar tu d&iacute;a. Si tienes dudas sobre un pedido, necesitas ayuda o buscas una cotizaci&oacute;n personalizada, nuestro equipo est&aacute; listo para apoyarte.</p>
+        </section>
+
+        <section class="contact-layout" aria-label="Opciones de contacto">
+            <div class="contact-stack">
+                <article class="contact-card tracking-card" id="seguimiento" aria-labelledby="tracking-title">
+                    <div class="contact-card__title">
+                        <svg viewBox="0 0 24 24" aria-hidden="true">
+                            <path d="M21 8a2 2 0 0 0-1-1.73L13 2.27a2 2 0 0 0-2 0L4 6.27A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16Z"></path>
+                            <path d="m3.3 7 8.7 5 8.7-5"></path>
+                            <path d="M12 22V12"></path>
+                        </svg>
+                        <h2 id="tracking-title">Seguimiento de Pedido</h2>
+                    </div>
+                    <p>Introduce tu n&uacute;mero de pedido para conocer el estado actual de tu horneado.</p>
+
+                    <form class="tracking-form" data-tracking-form>
+                        <label class="sr-only" for="trackingCode">N&uacute;mero de pedido</label>
+                        <input id="trackingCode" name="codigo" type="text" placeholder="Ej: #CHP-98234" autocomplete="off">
+                        <button type="submit">Buscar</button>
+                    </form>
+
+                    <div class="tracking-result" data-tracking-message aria-live="polite"></div>
+
+                    <div class="tracking-steps" data-tracking-steps aria-label="Estado del pedido">
+                        <div class="tracking-step" data-step="aceptado">
+                            <span></span>
+                            <strong>Pedido aceptado</strong>
+                        </div>
+                        <div class="tracking-line"></div>
+                        <div class="tracking-step" data-step="proceso">
+                            <span></span>
+                            <strong>En proceso</strong>
+                        </div>
+                        <div class="tracking-line"></div>
+                        <div class="tracking-step" data-step="listo">
+                            <span></span>
+                            <strong>Listo para recojo</strong>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="contact-card info-card" aria-labelledby="info-title">
+                    <h2 id="info-title">Datos de Contacto</h2>
+                    <div class="info-item">
+                        <span class="info-icon">
+                            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 10c0 6-8 12-8 12S4 16 4 10a8 8 0 1 1 16 0Z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+                        </span>
+                        <div>
+                            <h3>Direcci&oacute;n</h3>
+                            <ul class="location-list">
+                                <li>Av. Canad&aacute; N&deg;1733 - San Luis</li>
+                                <li>Av. Aviaci&oacute;n N&deg;2327 - San Borja</li>
+                                <li>Av. San Juan N&deg;517 - San Luis</li>
+                                <li>Calle Diego Fernandez N&deg;208 - Salamanca</li>
+                                <li>Av. Los Quechuas N&deg;1221 - Salamanca</li>
+                                <li>Av. Hermes N&deg;208 - Salamanca</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="info-item">
+                        <span class="info-icon">
+                            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2A19.86 19.86 0 0 1 11.19 19 19.5 19.5 0 0 1 5 12.81 19.86 19.86 0 0 1 2.08 4.18 2 2 0 0 1 4.06 2h3a2 2 0 0 1 2 1.72c.12.9.33 1.78.62 2.63a2 2 0 0 1-.45 2.11L8 9.69a16 16 0 0 0 6.31 6.31l1.23-1.23a2 2 0 0 1 2.11-.45c.85.29 1.73.5 2.63.62A2 2 0 0 1 22 16.92Z"></path></svg>
+                        </span>
+                        <div>
+                            <h3>Tel&eacute;fono</h3>
+                            <a href="https://wa.me/51934344116" target="_blank" rel="noopener noreferrer">+51 934 344 116</a>
+                        </div>
+                    </div>
+                    <div class="info-item">
+                        <span class="info-icon">
+                            <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="10"></circle><path d="M12 6v6l4 2"></path></svg>
+                        </span>
+                        <div>
+                            <h3>Horarios de atenci&oacute;n</h3>
+                            <p>Lunes a Viernes: 8 a.m. - 11 p.m.</p>
+                            <p>S&aacute;bado y Domingo: 8 a.m. - 12 p.m.</p>
+                        </div>
+                    </div>
+                </article>
+            </div>
+
+            <section class="contact-card form-card" aria-labelledby="form-title">
+                <span class="contact-eyebrow">Escr&iacute;benos</span>
+                <h2 id="form-title">Formulario de Contacto</h2>
+                <form class="contact-form" data-contact-form>
+                    <div class="form-grid">
+                        <label>
+                            <span>Nombre Completo</span>
+                            <input name="nombre" type="text" placeholder="Tu nombre" required>
+                        </label>
+                        <label>
+                            <span>Correo Electr&oacute;nico</span>
+                            <input name="email" type="email" placeholder="ejemplo@correo.com" required>
+                        </label>
+                        <label>
+                            <span>N&uacute;mero de Pedido (Opcional)</span>
+                            <input name="pedido" type="text" placeholder="#000000">
+                        </label>
+                        <label>
+                            <span>Asunto</span>
+                            <select name="asunto" required>
+                                <option value="Duda general">Duda general</option>
+                                <option value="Consulta de pedido">Consulta de pedido</option>
+                                <option value="Cotizacion personalizada">Cotizaci&oacute;n personalizada</option>
+                                <option value="Atencion para eventos">Atenci&oacute;n para eventos</option>
+                                <option value="Otro">Otro</option>
+                            </select>
+                        </label>
+                        <label class="other-subject-field" data-other-subject-field hidden>
+                            <span>Especifica tu asunto</span>
+                            <input name="otroAsunto" type="text" placeholder="Cu&eacute;ntanos brevemente el motivo">
+                        </label>
+                    </div>
+                    <label class="message-field">
+                        <span>Mensaje</span>
+                        <textarea name="mensaje" placeholder="&iquest;En qu&eacute; podemos ayudarte?" required></textarea>
+                    </label>
+                    <div class="contact-help-strip" aria-label="Canales rapidos">
+                        <div>
+                            <strong>Atenci&oacute;n directa</strong>
+                            <span>Para pedidos urgentes tambi&eacute;n puedes escribirnos por WhatsApp.</span>
+                        </div>
+                        <a href="https://wa.me/51934344116?text=Hola%20Chavala%2C%20necesito%20ayuda%20con%20una%20consulta" target="_blank" rel="noopener noreferrer">WhatsApp</a>
+                    </div>
+                    <button class="contact-submit" type="submit">
+                        <span>Enviar Mensaje</span>
+                        <svg viewBox="0 0 24 24" aria-hidden="true">
+                            <path d="m5 12 14-7-7 14-2-5Z"></path>
+                            <path d="m12 12-2 2"></path>
+                        </svg>
+                    </button>
+                    <p class="form-note">Nos pondremos en contacto contigo en un plazo de 24 horas h&aacute;biles.</p>
+                    <p class="form-status" data-form-status aria-live="polite"></p>
+                </form>
+            </section>
+        </section>
+    </main>
+
+    <div class="contact-loading" data-contact-loading hidden>
+        <div class="contact-loading__box">
+            <span class="contact-spinner" aria-hidden="true"></span>
+            <p>Buscando tu pedido...</p>
+        </div>
+    </div>
+
+    <div data-include="/assets/pages/footer.html"></div>
+    <script src="/js/main.js?v=20260629-4" defer></script>
+    <script src="/assets/pages/contact/contact.js?v=20260629-1" defer></script>
+</body>
+</html>

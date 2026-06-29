@@ -8,9 +8,27 @@
         <div class="nav-links">
             <a href="/index.html">Home</a>
             <a href="/assets/pages/catalog/catalog.html">Catalogo</a>
-            <a href="/assets/pages/reservation/">Reservacion</a>
+            <a href="/assets/pages/personalizados/personalizados.html">Personalizados</a>
+            <a href="/assets/pages/contact/contact.html">Contacto</a>
         </div>
 
-        <a class="login-button" href="/assets/pages/login/">Login</a>
+        <div class="auth-menu" data-auth-menu>
+            <a class="login-button" href="/assets/pages/login/" data-auth-link>
+                <svg class="login-button__icon" viewBox="0 0 24 24" aria-hidden="true">
+                    <path d="M20 21a8 8 0 0 0-16 0"></path>
+                    <circle cx="12" cy="7" r="4"></circle>
+                </svg>
+                <span data-auth-label>Login</span>
+                <svg class="login-button__chevron" viewBox="0 0 24 24" aria-hidden="true">
+                    <path d="m6 9 6 6 6-6"></path>
+                </svg>
+            </a>
+
+            <div class="auth-dropdown" data-auth-dropdown>
+                <a href="/assets/pages/account/account.html" data-auth-option="account">Mi cuenta</a>
+                <a href="/assets/pages/account/account.html#compras" data-auth-option="orders">Historial de pedidos</a>
+                <button type="button" data-logout>Cerrar sesion</button>
+            </div>
+        </div>
     </nav>
 </header>

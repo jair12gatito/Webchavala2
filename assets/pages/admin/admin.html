@@ -1,0 +1,648 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin | Panadería Chavala</title>
+    <link rel="icon" type="image/svg+xml" href="/assets/img/ic_icon.svg">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Quicksand:wght@500;600;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="/assets/pages/admin/style_admin.css">
+</head>
+
+<body>
+
+
+    <aside class="sidebar">
+        <div class="sidebar-brand">
+            <strong>Chavala</strong>
+            <small>Admin Dashboard</small>
+        </div>
+
+        <nav class="sidebar-nav">
+            <button class="nav-link is-active" data-section="dashboard">
+                <svg viewBox="0 0 24 24">
+                    <rect x="3" y="3" width="7" height="7" rx="1" />
+                    <rect x="14" y="3" width="7" height="7" rx="1" />
+                    <rect x="3" y="14" width="7" height="7" rx="1" />
+                    <rect x="14" y="14" width="7" height="7" rx="1" />
+                </svg>
+                Dashboard
+            </button>
+            <button class="nav-link" data-section="empleados">
+                <svg viewBox="0 0 24 24">
+                    <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2" />
+                    <circle cx="9" cy="7" r="4" />
+                    <path d="M22 21v-2a4 4 0 0 0-3-3.87" />
+                    <path d="M16 3.13a4 4 0 0 1 0 7.75" />
+                </svg>
+                Agregar Empleado
+            </button>
+            <button class="nav-link" data-section="productos">
+                <svg viewBox="0 0 24 24">
+                    <path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4Z" />
+                    <path d="M3 6h18" />
+                    <path d="M16 10a4 4 0 0 1-8 0" />
+                </svg>
+                Agregar Producto
+            </button>
+            <button class="nav-link" data-section="proveedores">
+                <svg viewBox="0 0 24 24">
+                    <path d="M3 7h18" />
+                    <path d="M5 7v12h14V7" />
+                    <path d="M9 11h6" />
+                    <path d="M9 15h4" />
+                    <path d="M7 3h10v4H7z" />
+                </svg>
+                Proveedores
+            </button>
+            <button class="nav-link" data-section="pedidos">
+                <svg viewBox="0 0 24 24">
+                    <path d="M9 5h6" />
+                    <path d="M9 12h6" />
+                    <path d="M9 19h4" />
+                    <rect width="16" height="20" x="4" y="2" rx="2" />
+                </svg>
+                Ver Pedidos
+            </button>
+        </nav>
+
+        <button class="sidebar-logout" id="adminLogout">
+            <svg viewBox="0 0 24 24">
+                <path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4" />
+                <path d="m16 17 5-5-5-5" />
+                <path d="M21 12H9" />
+            </svg>
+            Cerrar Sesión
+        </button>
+    </aside>
+
+
+    <div class="main">
+        <header class="topbar">
+            <span class="topbar-title" id="topbarTitle">Dashboard Overview</span>
+            <div class="topbar-user">
+                <svg viewBox="0 0 24 24">
+                    <path d="M20 21a8 8 0 0 0-16 0" />
+                    <circle cx="12" cy="7" r="4" />
+                </svg>
+                <span id="adminName">Admin</span>
+            </div>
+        </header>
+
+        <div class="content">
+
+
+            <section class="admin-section is-active" id="section-dashboard">
+                <div class="section-header">
+                    <div class="section-eyebrow">Resumen general</div>
+                    <h1>Dashboard Overview</h1>
+                    <p id="dashDate"></p>
+                </div>
+
+                <div class="stats-grid">
+                    <div class="stat-card">
+                        <div>
+                            <div class="stat-card__label">Pedidos pendientes</div>
+                            <div class="stat-card__value" id="statPending">—</div>
+                            <div class="stat-card__sub">Requieren atención</div>
+                        </div>
+                        <div class="stat-card__icon">
+                            <svg viewBox="0 0 24 24">
+                                <path d="M6 2h12" />
+                                <path d="M6 22h12" />
+                                <path d="M8 2v6a4 4 0 0 0 8 0V2" />
+                                <path d="M8 22v-6a4 4 0 0 1 8 0v6" />
+                            </svg>
+                        </div>
+                    </div>
+                    <div class="stat-card">
+                        <div>
+                            <div class="stat-card__label">Total pedidos</div>
+                            <div class="stat-card__value" id="statTotal">—</div>
+                            <div class="stat-card__sub">En base de datos</div>
+                        </div>
+                        <div class="stat-card__icon">
+                            <svg viewBox="0 0 24 24">
+                                <path d="M9 5h6" />
+                                <path d="M9 12h6" />
+                                <path d="M9 19h4" />
+                                <rect width="16" height="20" x="4" y="2" rx="2" />
+                            </svg>
+                        </div>
+                    </div>
+                    <div class="stat-card">
+                        <div>
+                            <div class="stat-card__label">Productos activos</div>
+                            <div class="stat-card__value" id="statProductos">—</div>
+                            <div class="stat-card__sub">En catálogo</div>
+                        </div>
+                        <div class="stat-card__icon">
+                            <svg viewBox="0 0 24 24">
+                                <path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4Z" />
+                                <path d="M3 6h18" />
+                                <path d="M16 10a4 4 0 0 1-8 0" />
+                            </svg>
+                        </div>
+                    </div>
+                    <div class="stat-card">
+                        <div>
+                            <div class="stat-card__label">Empleados</div>
+                            <div class="stat-card__value" id="statEmpleados">—</div>
+                            <div class="stat-card__sub">Registrados</div>
+                        </div>
+                        <div class="stat-card__icon">
+                            <svg viewBox="0 0 24 24">
+                                <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2" />
+                                <circle cx="9" cy="7" r="4" />
+                                <path d="M22 21v-2a4 4 0 0 0-3-3.87" />
+                                <path d="M16 3.13a4 4 0 0 1 0 7.75" />
+                            </svg>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="dash-grid">
+
+                    <div class="card">
+                        <div class="card-header">
+                            <h2>Gestión de Empleados</h2>
+                            <button class="btn btn-primary" onclick="showSection('empleados')">
+                                <svg viewBox="0 0 24 24">
+                                    <path d="M12 5v14" />
+                                    <path d="M5 12h14" />
+                                </svg>
+                                Agregar Empleado
+                            </button>
+                        </div>
+                        <div class="table-wrap">
+                            <table>
+                                <thead>
+                                    <tr>
+                                        <th>Nombre</th>
+                                        <th>Rol</th>
+                                        <th>Estado</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="dashEmpleadosBody">
+                                    <tr class="loading-row">
+                                        <td colspan="3">Cargando...</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+
+
+                    <div class="card">
+                        <div class="card-header">
+                            <h2>Ver Pedidos</h2>
+                            <button class="card-link" onclick="showSection('pedidos')">Ver todos →</button>
+                        </div>
+                        <div class="table-wrap">
+                            <table>
+                                <thead>
+                                    <tr>
+                                        <th>ID</th>
+                                        <th>Cliente</th>
+                                        <th>Total</th>
+                                        <th>Estado</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="dashPedidosBody">
+                                    <tr class="loading-row">
+                                        <td colspan="4">Cargando...</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="card">
+                    <div class="card-header">
+                        <h2>Gestión de Productos</h2>
+                        <button class="btn btn-primary" onclick="showSection('productos')">
+                            <svg viewBox="0 0 24 24">
+                                <path d="M12 5v14" />
+                                <path d="M5 12h14" />
+                            </svg>
+                            Agregar Producto
+                        </button>
+                    </div>
+                    <div class="table-wrap">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Nombre</th>
+                                    <th>Categoría</th>
+                                    <th>Precio</th>
+                                    <th></th>
+                                </tr>
+                            </thead>
+                            <tbody id="dashProductosBody">
+                                <tr class="loading-row">
+                                    <td colspan="4">Cargando...</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </section>
+
+
+            <section class="admin-section" id="section-empleados">
+                <div class="section-header">
+                    <div class="section-eyebrow">Equipo</div>
+                    <h1>Gestión de Empleados</h1>
+                    <p>Agrega, edita y administra a los miembros del equipo Chavala.</p>
+                </div>
+
+                <div class="toolbar">
+                    <div class="search-box">
+                        <svg viewBox="0 0 24 24">
+                            <circle cx="11" cy="11" r="7" />
+                            <path d="m21 21-4.3-4.3" />
+                        </svg>
+                        <input type="search" placeholder="Buscar por nombre o correo..." id="empleadoSearch">
+                    </div>
+                    <button class="btn btn-primary" id="btnNuevoEmpleado">
+                        <svg viewBox="0 0 24 24">
+                            <path d="M12 5v14" />
+                            <path d="M5 12h14" />
+                        </svg>
+                        Nuevo Empleado
+                    </button>
+                </div>
+
+                <div class="card">
+                    <div class="table-wrap">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Empleado</th>
+                                    <th>DNI</th>
+                                    <th>Celular</th>
+                                    <th>Rol</th>
+                                    <th>Estado</th>
+                                    <th></th>
+                                </tr>
+                            </thead>
+                            <tbody id="empleadosBody">
+                                <tr class="loading-row">
+                                    <td colspan="6">Cargando empleados...</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </section>
+
+
+            <section class="admin-section" id="section-productos">
+                <div class="section-header">
+                    <div class="section-eyebrow">Catálogo</div>
+                    <h1>Gestión de Productos</h1>
+                    <p>Administra los productos disponibles en el catálogo de Chavala.</p>
+                </div>
+
+                <div class="toolbar">
+                    <div class="search-box">
+                        <svg viewBox="0 0 24 24">
+                            <circle cx="11" cy="11" r="7" />
+                            <path d="m21 21-4.3-4.3" />
+                        </svg>
+                        <input type="search" placeholder="Buscar producto..." id="productoSearch">
+                    </div>
+                    <button class="btn btn-primary" id="btnNuevoProducto">
+                        <svg viewBox="0 0 24 24">
+                            <path d="M12 5v14" />
+                            <path d="M5 12h14" />
+                        </svg>
+                        Nuevo Producto
+                    </button>
+                </div>
+
+                <div class="card">
+                    <div class="table-wrap">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Producto</th>
+                                    <th>Categoría</th>
+                                    <th>Precio</th>
+                                    <th>Stock</th>
+                                    <th></th>
+                                </tr>
+                            </thead>
+                            <tbody id="productosBody">
+                                <tr class="loading-row">
+                                    <td colspan="5">Cargando productos...</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </section>
+            <section class="admin-section" id="section-proveedores">
+
+                <div class="section-header">
+                    <div class="section-eyebrow">Compras</div>
+
+                    <h1>Gestión de Proveedores</h1>
+
+                    <p>Administra los proveedores registrados.</p>
+                </div>
+
+                <div class="toolbar">
+
+                    <div class="search-box">
+
+                        <svg viewBox="0 0 24 24">
+                            <circle cx="11" cy="11" r="7" />
+                            <path d="m21 21-4.3-4.3" />
+                        </svg>
+
+                        <input type="search" id="proveedorSearch" placeholder="Buscar proveedor">
+
+                    </div>
+
+                    <button class="btn btn-primary" id="btnNuevoProveedor">
+
+                        Nuevo Proveedor
+
+                    </button>
+
+                </div>
+
+                <div class="card">
+
+                    <div class="table-wrap">
+
+                        <table>
+
+                            <thead>
+
+                                <tr>
+
+                                    <th>Proveedor</th>
+                                    <th>RUC/DNI</th>
+                                    <th>Teléfono</th>
+                                    <th>Dirección</th>
+
+                                </tr>
+
+                            </thead>
+
+                            <tbody id="proveedoresBody">
+
+                                <tr>
+
+                                    <td colspan="4">
+
+                                        Cargando proveedores...
+
+                                    </td>
+
+                                </tr>
+
+                            </tbody>
+
+                        </table>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+
+            <section class="admin-section" id="section-pedidos">
+                <div class="section-header">
+                    <div class="section-eyebrow">Órdenes</div>
+                    <h1>Ver Pedidos</h1>
+                    <p>Historial completo de pedidos registrados en el sistema.</p>
+                </div>
+
+                <div class="toolbar">
+                    <div class="search-box">
+                        <svg viewBox="0 0 24 24">
+                            <circle cx="11" cy="11" r="7" />
+                            <path d="m21 21-4.3-4.3" />
+                        </svg>
+                        <input type="search" placeholder="Buscar por cliente o ID..." id="pedidoSearch">
+                    </div>
+                    <select class="filter-select" id="pedidoFilter">
+                        <option value="">Todos los estados</option>
+                        <option value="pendiente">Pendiente</option>
+                        <option value="en preparacion">En preparación</option>
+                        <option value="listo">Listo</option>
+                        <option value="rechazado">Rechazado</option>
+                    </select>
+                </div>
+
+                <div class="card">
+                    <div class="table-wrap">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>ID</th>
+                                    <th>Cliente</th>
+                                    <th>Descripción</th>
+                                    <th>Fecha</th>
+                                    <th>Total</th>
+                                    <th>Estado</th>
+                                    <th></th>
+                                </tr>
+                            </thead>
+                            <tbody id="pedidosBody">
+                                <tr class="loading-row">
+                                    <td colspan="7">Cargando pedidos...</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </section>
+
+        </div>
+    </div>
+
+
+    <div class="modal-backdrop hidden" id="modalEmpleado">
+        <div class="modal">
+            <h2 id="modalEmpleadoTitle">Nuevo Empleado</h2>
+            <p id="modalEmpleadoDesc">Completa los datos para registrar al empleado.</p>
+            <div class="modal-fields">
+                <div class="field">
+                    <label>Nombre completo</label>
+                    <input type="text" id="empNombre" placeholder="Ej. María García">
+                </div>
+                <div class="field-grid">
+                    <div class="field">
+                        <label>Correo</label>
+                        <input type="email" id="empEmail" placeholder="correo@chavala.com">
+                    </div>
+                    <div class="field">
+                        <label>Contraseña</label>
+                        <input type="password" id="empPassword" placeholder="Mínimo 8 caracteres">
+                    </div>
+                </div>
+                <div class="field-grid">
+                    <div class="field">
+                        <label>DNI</label>
+                        <input type="text" id="empDni" placeholder="12345678" maxlength="8">
+                    </div>
+                    <div class="field">
+                        <label>Celular</label>
+                        <input type="text" id="empCelular" placeholder="9XXXXXXXX" maxlength="9">
+                    </div>
+                </div>
+            </div>
+            <div class="modal-status" id="modalEmpleadoStatus"></div>
+            <div class="modal-actions">
+                <button class="btn btn-ghost" id="cancelEmpleado">Cancelar</button>
+                <button class="btn btn-primary" id="saveEmpleado">Registrar empleado</button>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="modal-backdrop hidden" id="modalProducto">
+        <div class="modal">
+            <h2 id="modalProductoTitle">Nuevo Producto</h2>
+            <p>Completa los datos del producto para el catálogo.</p>
+            <div class="modal-fields">
+                <div class="field">
+                    <label>Nombre del producto</label>
+                    <input type="text" id="prodNombre" placeholder="Ej. Tres leches">
+                </div>
+                <div class="field-grid">
+                    <div class="field">
+                        <label>Categoría</label>
+                        <input type="text" id="prodCategoria" placeholder="Ej. Pasteles">
+                    </div>
+                    <div class="field">
+                        <label>Precio (S/)</label>
+                        <input type="number" id="prodPrecio" placeholder="0.00" step="0.01" min="0">
+                    </div>
+                </div>
+                <div class="field">
+                    <label>Descripción</label>
+                    <textarea id="prodDescripcion" rows="3" placeholder="Descripción del producto..."></textarea>
+                </div>
+            </div>
+            <div class="modal-status" id="modalProductoStatus"></div>
+            <div class="modal-actions">
+                <button class="btn btn-ghost" id="cancelProducto">Cancelar</button>
+                <button class="btn btn-primary" id="saveProducto">Guardar producto</button>
+            </div>
+        </div>
+    </div>
+    <div class="modal-backdrop hidden" id="modalPedido">
+        <div class="modal">
+            <h2>Cambiar estado</h2>
+            <p id="modalPedidoDesc">Selecciona el nuevo estado del pedido.</p>
+            <div class="modal-fields">
+                <div class="field">
+                    <label>Estado</label>
+                    <select id="pedidoEstado">
+                        <option value="pendiente">Pendiente</option>
+                        <option value="en preparacion">En preparación</option>
+                        <option value="listo">Listo</option>
+                        <option value="rechazado">Rechazado</option>
+                    </select>
+                </div>
+                <div class="field" id="motivoField" style="display:none">
+                    <label>Motivo de rechazo</label>
+                    <textarea id="pedidoMotivo" rows="2" placeholder="Motivo opcional..."></textarea>
+                </div>
+            </div>
+            <div class="modal-status" id="modalPedidoStatus"></div>
+            <div class="modal-actions">
+                <button class="btn btn-ghost" id="cancelPedido">Cancelar</button>
+                <button class="btn btn-primary" id="savePedido">Guardar cambio</button>
+            </div>
+        </div>
+    </div>
+    <div class="modal-backdrop hidden" id="modalProveedor">
+
+        <div class="modal">
+
+            <h2>Nuevo Proveedor</h2>
+
+            <p>Registrar proveedor.</p>
+
+            <div class="modal-fields">
+
+                <div class="field">
+
+                    <label>Nombre</label>
+
+                    <input id="provNombre" type="text">
+
+                </div>
+
+                <div class="field-grid">
+
+                    <div class="field">
+
+                        <label>RUC/DNI</label>
+
+                        <input id="provRuc" maxlength="11">
+
+                    </div>
+
+                    <div class="field">
+
+                        <label>Teléfono</label>
+
+                        <input id="provTelefono" maxlength="9">
+
+                    </div>
+
+                </div>
+
+                <div class="field">
+
+                    <label>Dirección</label>
+
+                    <input id="provDireccion">
+
+                </div>
+
+            </div>
+
+            <div class="modal-status" id="modalProveedorStatus">
+
+            </div>
+
+            <div class="modal-actions">
+
+                <button class="btn btn-ghost" id="cancelProveedor">
+
+                    Cancelar
+
+                </button>
+
+                <button class="btn btn-primary" id="saveProveedor">
+
+                    Guardar
+
+                </button>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <script src="/assets/pages/admin/admin.js"></script>
+</body>
+
+</html>

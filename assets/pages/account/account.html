@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mi Cuenta | Panaderia Chavala</title>
+    <link rel="icon" type="image/svg+xml" href="/assets/img/ic_icon.svg">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Quicksand:wght@500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/css/style.css?v=20260629-3">
+    <link rel="stylesheet" href="/assets/pages/account/style_account.css?v=20260629-3">
+</head>
+<body>
+    <div data-include="/assets/pages/header.html"></div>
+
+    <main class="account-page">
+        <aside class="account-sidebar" aria-label="Opciones de mi cuenta">
+            <a class="account-nav-link is-active" href="#perfil" data-account-tab="perfil">
+                <svg viewBox="0 0 24 24" aria-hidden="true">
+                    <path d="M20 21a8 8 0 0 0-16 0"></path>
+                    <circle cx="12" cy="7" r="4"></circle>
+                </svg>
+                <span>Perfil</span>
+            </a>
+            <a class="account-nav-link" href="#compras" data-account-tab="compras">
+                <svg viewBox="0 0 24 24" aria-hidden="true">
+                    <path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4Z"></path>
+                    <path d="M3 6h18"></path>
+                    <path d="M16 10a4 4 0 0 1-8 0"></path>
+                </svg>
+                <span>Historial de pedidos</span>
+            </a>
+            <a class="account-nav-link" href="#password" data-account-tab="password">
+                <svg viewBox="0 0 24 24" aria-hidden="true">
+                    <rect width="18" height="11" x="3" y="11" rx="2"></rect>
+                    <path d="M7 11V7a5 5 0 0 1 10 0v4"></path>
+                </svg>
+                <span>Cambio de contrase&ntilde;a</span>
+            </a>
+        </aside>
+
+        <section class="account-content account-section" id="perfil" aria-labelledby="account-title" data-account-section="perfil">
+            <div class="account-heading">
+                <h1 id="account-title">Mi Cuenta</h1>
+                <p>Actualiza tu informaci&oacute;n personal y mant&eacute;n tus datos listos para tus pedidos.</p>
+            </div>
+
+            <section class="profile-card" aria-labelledby="profile-title">
+                <header class="profile-card__header">
+                    <div class="profile-avatar" aria-hidden="true">
+                        <svg viewBox="0 0 24 24">
+                            <path d="M20 21a8 8 0 0 0-16 0"></path>
+                            <circle cx="12" cy="7" r="4"></circle>
+                        </svg>
+                    </div>
+                    <div>
+                        <h2 id="profile-title" data-profile-name>Tu perfil</h2>
+                        <p data-profile-message>Gestiona tus datos para que podamos contactarte con facilidad.</p>
+                    </div>
+                </header>
+
+                <form class="profile-form" data-profile-form novalidate>
+                    <p class="profile-status" data-profile-status aria-live="polite"></p>
+
+                    <label class="profile-field profile-field--full" for="profile-name">
+                        <span>Nombre completo</span>
+                        <input id="profile-name" name="nombre" type="text" autocomplete="name">
+                    </label>
+
+                    <div class="profile-grid profile-grid--three">
+                        <label class="profile-field" for="profile-dni">
+                            <span>DNI</span>
+                            <input id="profile-dni" name="dni" type="text" inputmode="numeric" disabled aria-readonly="true">
+                        </label>
+
+                        <label class="profile-field" for="profile-email">
+                            <span>Correo electr&oacute;nico</span>
+                            <input id="profile-email" name="email" type="email" autocomplete="email">
+                        </label>
+
+                        <label class="profile-field" for="profile-phone">
+                            <span>Celular</span>
+                            <input id="profile-phone" name="celular" type="tel" inputmode="numeric" maxlength="9" autocomplete="tel" placeholder="934344116">
+                        </label>
+                    </div>
+
+                    <div class="profile-actions">
+                        <button class="profile-submit" type="submit" disabled>Guardar cambios</button>
+                        <button class="profile-cancel" type="button" data-profile-cancel hidden>Cancelar</button>
+                    </div>
+                </form>
+            </section>
+        </section>
+
+        <section class="account-content account-section" id="compras" aria-labelledby="history-title" data-account-section="compras" hidden>
+            <div class="account-heading">
+                <h1 id="history-title">Historial de pedidos</h1>
+                <p>Revisa el historial de tus pedidos recientes.</p>
+            </div>
+
+            <section class="purchases-card" aria-label="Historial de pedidos">
+                <div class="purchases-loader" data-purchases-loading>
+                    <span></span>
+                    <p>Cargando tus compras...</p>
+                </div>
+
+                <div class="purchases-table-wrap" data-purchases-table hidden>
+                    <table class="purchases-table">
+                        <thead>
+                            <tr>
+                                <th>ID Pedido</th>
+                                <th>Fecha</th>
+                                <th>Productos</th>
+                                <th>Estado</th>
+                                <th>Total</th>
+                            </tr>
+                        </thead>
+                        <tbody data-purchases-body></tbody>
+                    </table>
+                </div>
+
+                <div class="empty-account-card purchases-empty" data-purchases-empty hidden>
+                    <div class="empty-account-card__icon" aria-hidden="true">
+                        <svg viewBox="0 0 24 24">
+                            <path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4Z"></path>
+                            <path d="M3 6h18"></path>
+                            <path d="M16 10a4 4 0 0 1-8 0"></path>
+                        </svg>
+                    </div>
+                    <h2>Sin compras todav&iacute;a</h2>
+                    <p>Cuando realices un pedido, aparecer&aacute; en esta secci&oacute;n.</p>
+                </div>
+            </section>
+        </section>
+
+        <section class="account-content account-section" id="password" aria-labelledby="password-title" data-account-section="password" hidden>
+            <div class="account-heading">
+                <h1 id="password-title">Cambio de Contrase&ntilde;a</h1>
+                <p>Protege tu cuenta actualizando tu contrase&ntilde;a cuando lo necesites.</p>
+            </div>
+
+            <section class="profile-card password-card" aria-label="Formulario para cambiar contrase&ntilde;a">
+                <form class="password-form" data-password-form novalidate>
+                    <p class="profile-status" data-password-status aria-live="polite"></p>
+
+                    <label class="profile-field password-field" for="current-password">
+                        <span>Contrase&ntilde;a actual</span>
+                        <div class="password-input-wrap">
+                            <input id="current-password" name="currentPassword" type="password" autocomplete="current-password" placeholder="Tu contrase&ntilde;a actual">
+                            <button class="password-toggle" type="button" data-password-toggle aria-label="Mostrar contrase&ntilde;a" aria-controls="current-password">
+                                <svg viewBox="0 0 24 24" aria-hidden="true">
+                                    <path d="M2 12s3.5-7 10-7 10 7 10 7-3.5 7-10 7S2 12 2 12Z"></path>
+                                    <circle cx="12" cy="12" r="3"></circle>
+                                </svg>
+                            </button>
+                        </div>
+                    </label>
+
+                    <label class="profile-field password-field" for="new-password">
+                        <span>Nueva contrase&ntilde;a</span>
+                        <div class="password-input-wrap">
+                            <input id="new-password" name="newPassword" type="password" autocomplete="new-password" placeholder="M&iacute;nimo 8 caracteres">
+                            <button class="password-toggle" type="button" data-password-toggle aria-label="Mostrar contrase&ntilde;a" aria-controls="new-password">
+                                <svg viewBox="0 0 24 24" aria-hidden="true">
+                                    <path d="M2 12s3.5-7 10-7 10 7 10 7-3.5 7-10 7S2 12 2 12Z"></path>
+                                    <circle cx="12" cy="12" r="3"></circle>
+                                </svg>
+                            </button>
+                        </div>
+                    </label>
+
+                    <label class="profile-field password-field" for="confirm-password">
+                        <span>Confirmar nueva contrase&ntilde;a</span>
+                        <div class="password-input-wrap">
+                            <input id="confirm-password" name="confirmPassword" type="password" autocomplete="new-password" placeholder="Repite tu nueva contrase&ntilde;a">
+                            <button class="password-toggle" type="button" data-password-toggle aria-label="Mostrar contrase&ntilde;a" aria-controls="confirm-password">
+                                <svg viewBox="0 0 24 24" aria-hidden="true">
+                                    <path d="M2 12s3.5-7 10-7 10 7 10 7-3.5 7-10 7S2 12 2 12Z"></path>
+                                    <circle cx="12" cy="12" r="3"></circle>
+                                </svg>
+                            </button>
+                        </div>
+                    </label>
+
+                    <div class="profile-actions">
+                        <button class="profile-submit password-submit" type="submit" disabled>Actualizar Contrase&ntilde;a</button>
+                        <button class="profile-cancel password-cancel" type="button" data-password-cancel hidden>Cancelar</button>
+                    </div>
+                </form>
+            </section>
+        </section>
+    </main>
+
+    <div class="account-modal" data-success-modal hidden role="dialog" aria-modal="true" aria-labelledby="success-title">
+        <div class="account-modal__panel">
+            <div class="account-modal__icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24">
+                    <path d="M20 6 9 17l-5-5"></path>
+                </svg>
+            </div>
+            <h2 id="success-title" data-success-title>Cambios guardados</h2>
+            <p data-success-message>Sus cambios se guardaron correctamente.</p>
+            <button type="button" data-success-close>Entendido</button>
+        </div>
+    </div>
+
+    <div data-include="/assets/pages/footer.html"></div>
+    <script src="/js/main.js?v=20260629-4" defer></script>
+    <script src="/assets/pages/account/account.js?v=20260629-3" defer></script>
+</body>
+</html>

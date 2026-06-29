@@ -193,6 +193,7 @@ input {
 
 .login-form input[type="text"],
 .login-form input[type="email"],
+.login-form input[type="tel"],
 .login-form input[type="password"] {
     width: 100%;
     height: 42px;
@@ -260,6 +261,7 @@ input {
 
 .login-form input[type="text"]:focus,
 .login-form input[type="email"]:focus,
+.login-form input[type="tel"]:focus,
 .login-form input[type="password"]:focus {
     border-color: var(--primary);
     box-shadow: 0 0 0 4px rgba(209, 77, 143, 0.12);
@@ -361,8 +363,8 @@ input {
 }
 
 .login-register {
-    margin-top: 24px;
-    padding-top: 20px;
+    margin-top: 18px;
+    padding-top: 16px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -375,6 +377,8 @@ input {
 
 .register-page {
     grid-template-columns: minmax(0, 1.08fr) minmax(360px, 0.92fr);
+    height: min(100%, 700px);
+    max-height: 700px;
 }
 
 .register-visual {
@@ -396,18 +400,29 @@ input {
 }
 
 .register-panel__content {
-    width: min(100%, 390px);
+    width: min(100%, 420px);
 }
 
 .register-brand {
-    margin: 0 auto;
-    align-items: center;
-    text-align: center;
+    margin: 0;
+    align-items: flex-start;
+    text-align: left;
 }
 
 .register-form {
-    margin-top: 30px;
-    gap: 9px;
+    margin-top: 22px;
+    gap: 7px;
+}
+
+.register-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 12px;
+}
+
+.register-grid > div {
+    display: grid;
+    gap: 8px;
 }
 
 .register-form input::placeholder {
@@ -439,7 +454,7 @@ input {
 }
 
 .register-submit {
-    margin-top: 14px;
+    margin-top: 8px;
 }
 
 @media (max-width: 860px) {
@@ -498,6 +513,10 @@ input {
 }
 
 @media (max-width: 460px) {
+    .register-grid {
+        grid-template-columns: 1fr;
+    }
+
     .login-options,
     .login-register {
         align-items: flex-start;

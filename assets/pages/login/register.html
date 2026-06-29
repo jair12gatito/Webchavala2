@@ -8,7 +8,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Quicksand:wght@500;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="/assets/pages/login/style_login.css?v=20260625-2">
+    <link rel="stylesheet" href="/assets/pages/login/style_login.css?v=20260627-1">
 </head>
 <body>
     <main class="auth-shell">
@@ -26,25 +26,67 @@
                         <small>&Uacute;nete a nuestra familia de sabor.</small>
                     </a>
 
-                    <form class="login-form register-form" aria-label="Formulario de registro">
+                    <form class="login-form register-form" aria-label="Formulario de registro" data-register-form novalidate>
+                        <p class="login-status" data-register-status aria-live="polite"></p>
+
                         <label for="register-name">Nombre Completo</label>
-                        <input id="register-name" type="text" name="name" placeholder="Tu nombre" autocomplete="name">
+                        <input id="register-name" type="text" name="nombre" placeholder="Tu nombre" autocomplete="name">
 
                         <label for="register-email">Correo Electr&oacute;nico</label>
                         <input id="register-email" type="email" name="email" placeholder="tu@correo.com" autocomplete="email">
 
+                        <div class="register-grid">
+                            <div>
+                                <label for="register-dni">DNI</label>
+                                <input id="register-dni" type="text" name="dni" placeholder="12345678" inputmode="numeric" maxlength="8" autocomplete="off">
+                            </div>
+
+                            <div>
+                                <label for="register-phone">Celular</label>
+                                <input id="register-phone" type="tel" name="celular" placeholder="934344116" inputmode="numeric" maxlength="9" autocomplete="tel">
+                            </div>
+                        </div>
+
                         <label for="register-password">Contrase&ntilde;a</label>
-                        <input id="register-password" type="password" name="password" placeholder="********" autocomplete="new-password">
+                        <div class="password-field">
+                            <input id="register-password" type="password" name="password" placeholder="M&iacute;nimo 8 caracteres" autocomplete="new-password">
+                            <button class="password-toggle" type="button" data-toggle-password aria-label="Mostrar contrasena" aria-controls="register-password">
+                                <svg class="password-toggle__eye" viewBox="0 0 24 24" aria-hidden="true">
+                                    <path d="M2.5 12s3.5-6 9.5-6 9.5 6 9.5 6-3.5 6-9.5 6-9.5-6-9.5-6Z"></path>
+                                    <circle cx="12" cy="12" r="3"></circle>
+                                </svg>
+                                <svg class="password-toggle__eye-off" viewBox="0 0 24 24" aria-hidden="true">
+                                    <path d="M3 3l18 18"></path>
+                                    <path d="M10.7 5.2A10.7 10.7 0 0 1 12 5c6 0 9.5 7 9.5 7a16.7 16.7 0 0 1-3.1 4"></path>
+                                    <path d="M6.6 6.6A16.1 16.1 0 0 0 2.5 12s3.5 7 9.5 7a9.7 9.7 0 0 0 4.5-1.1"></path>
+                                    <path d="M9.9 9.9A3 3 0 0 0 14.1 14"></path>
+                                </svg>
+                            </button>
+                        </div>
 
                         <label for="register-confirm">Confirmar Contrase&ntilde;a</label>
-                        <input id="register-confirm" type="password" name="confirm-password" placeholder="********" autocomplete="new-password">
+                        <div class="password-field">
+                            <input id="register-confirm" type="password" name="confirmPassword" placeholder="Repite tu contrase&ntilde;a" autocomplete="new-password">
+                            <button class="password-toggle" type="button" data-toggle-password aria-label="Mostrar contrasena" aria-controls="register-confirm">
+                                <svg class="password-toggle__eye" viewBox="0 0 24 24" aria-hidden="true">
+                                    <path d="M2.5 12s3.5-6 9.5-6 9.5 6 9.5 6-3.5 6-9.5 6-9.5-6-9.5-6Z"></path>
+                                    <circle cx="12" cy="12" r="3"></circle>
+                                </svg>
+                                <svg class="password-toggle__eye-off" viewBox="0 0 24 24" aria-hidden="true">
+                                    <path d="M3 3l18 18"></path>
+                                    <path d="M10.7 5.2A10.7 10.7 0 0 1 12 5c6 0 9.5 7 9.5 7a16.7 16.7 0 0 1-3.1 4"></path>
+                                    <path d="M6.6 6.6A16.1 16.1 0 0 0 2.5 12s3.5 7 9.5 7a9.7 9.7 0 0 0 4.5-1.1"></path>
+                                    <path d="M9.9 9.9A3 3 0 0 0 14.1 14"></path>
+                                </svg>
+                            </button>
+                        </div>
 
                         <label class="register-terms" for="register-terms">
                             <input id="register-terms" type="checkbox" name="terms">
                             <span>Acepto los <button class="login-link" type="button">t&eacute;rminos y condiciones</button> y la <button class="login-link" type="button">pol&iacute;tica de privacidad</button>.</span>
                         </label>
 
-                        <button class="login-submit register-submit" type="button">Crear Cuenta <span aria-hidden="true">-&gt;</span></button>
+                        <button class="login-submit register-submit" type="submit">Crear Cuenta</button>
                     </form>
 
                     <div class="login-register">
@@ -55,5 +97,6 @@
             </div>
         </section>
     </main>
+    <script src="/assets/pages/login/register.js?v=20260627-1" defer></script>
 </body>
 </html>

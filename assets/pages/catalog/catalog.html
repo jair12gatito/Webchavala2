@@ -8,8 +8,8 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Quicksand:wght@500;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="/css/style.css?v=20260623-5">
-    <link rel="stylesheet" href="/assets/pages/catalog/style_catalog.css?v=20260625-2">
+    <link rel="stylesheet" href="/css/style.css?v=20260629-3">
+    <link rel="stylesheet" href="/assets/pages/catalog/style_catalog.css?v=20260627-3">
 </head>
 <body>
     <div data-include="/assets/pages/header.html"></div>
@@ -107,8 +107,106 @@
         </section>
     </main>
 
+    <aside class="catalog-cart" data-catalog-cart hidden aria-label="Carrito de compras">
+        <button class="catalog-cart__toggle" type="button" data-cart-toggle aria-label="Abrir carrito" aria-expanded="false">
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+                <circle cx="8" cy="21" r="1"></circle>
+                <circle cx="19" cy="21" r="1"></circle>
+                <path d="M2.05 2.05h2l2.66 12.42a2 2 0 0 0 2 1.58h8.7a2 2 0 0 0 2-1.58l1.6-8.42H5.12"></path>
+            </svg>
+            <span data-cart-count>0</span>
+        </button>
+
+        <section class="catalog-cart__panel" data-cart-panel hidden>
+            <header class="catalog-cart__header">
+                <div>
+                    <span>Pedido actual</span>
+                    <h2>Mi carrito</h2>
+                </div>
+                <button type="button" data-cart-close aria-label="Cerrar carrito">&times;</button>
+            </header>
+
+            <div class="catalog-cart__items" data-cart-items></div>
+
+            <p class="catalog-cart__empty" data-cart-empty>Tu carrito est&aacute; vac&iacute;o. Agrega productos del cat&aacute;logo.</p>
+            <p class="catalog-cart__status" data-cart-status aria-live="polite"></p>
+
+            <footer class="catalog-cart__footer">
+                <div class="catalog-cart__total">
+                    <span>Total</span>
+                    <strong data-cart-total>S/ 0</strong>
+                </div>
+                <button class="catalog-cart__checkout" type="button" data-cart-checkout>Confirmar pedido</button>
+            </footer>
+        </section>
+    </aside>
+
+    <div class="catalog-order-modal" data-order-modal hidden role="dialog" aria-modal="true" aria-labelledby="order-modal-title">
+        <section class="catalog-order-modal__card">
+            <span class="catalog-order-modal__eyebrow">Confirmar compra</span>
+            <h2 id="order-modal-title">Estos son los productos que comprar&aacute;s</h2>
+            <p>Revisa tu pedido antes de enviarlo a la panader&iacute;a.</p>
+
+            <div class="catalog-order-modal__items" data-order-modal-items></div>
+
+            <div class="catalog-order-modal__total">
+                <span>Total</span>
+                <strong data-order-modal-total>S/ 0</strong>
+            </div>
+
+            <p class="catalog-order-modal__status" data-order-modal-status aria-live="polite"></p>
+
+            <div class="catalog-order-modal__actions">
+                <button class="catalog-order-modal__cancel" type="button" data-order-cancel>No</button>
+                <button class="catalog-order-modal__confirm" type="button" data-order-confirm>S&iacute;, generar pedido</button>
+            </div>
+        </section>
+    </div>
+
+    <button class="wsp-fab" id="wspFab" type="button" aria-label="Abrir chat de Chavala" aria-expanded="false">
+        <svg viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/>
+            <path d="M12 0C5.373 0 0 5.373 0 12c0 2.09.537 4.05 1.476 5.757L.057 23.882a.5.5 0 0 0 .614.612l6.281-1.634A11.945 11.945 0 0 0 12 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.818a9.818 9.818 0 0 1-4.988-1.363l-.357-.213-3.728.969.997-3.623-.234-.373A9.768 9.768 0 0 1 2.182 12C2.182 6.578 6.578 2.182 12 2.182S21.818 6.578 21.818 12 17.422 21.818 12 21.818z"/>
+        </svg>
+        <span class="wsp-fab__badge" id="wspBadge">1</span>
+    </button>
+
+    <div class="wsp-chat" id="wspChat" role="dialog" aria-label="Chat con Chavala Bot" aria-modal="false">
+        <div class="wsp-chat__head">
+            <div class="wsp-chat__avatar" aria-hidden="true">
+                <svg viewBox="0 0 24 24">
+                    <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/>
+                    <path d="M12 0C5.373 0 0 5.373 0 12c0 2.09.537 4.05 1.476 5.757L.057 23.882a.5.5 0 0 0 .614.612l6.281-1.634A11.945 11.945 0 0 0 12 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.818a9.818 9.818 0 0 1-4.988-1.363l-.357-.213-3.728.969.997-3.623-.234-.373A9.768 9.768 0 0 1 2.182 12C2.182 6.578 6.578 2.182 12 2.182S21.818 6.578 21.818 12 17.422 21.818 12 21.818z"/>
+                </svg>
+            </div>
+            <div class="wsp-chat__info">
+                <span class="wsp-chat__name">Chavala Bot</span>
+                <span class="wsp-chat__status">En l&iacute;nea ahora</span>
+            </div>
+            <button class="wsp-chat__close" id="wspClose" type="button" aria-label="Cerrar chat">
+                <svg viewBox="0 0 24 24" aria-hidden="true"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+            </button>
+        </div>
+        <div class="wsp-chat__bg" id="wspMessages" aria-live="polite"></div>
+        <div class="wsp-suggestions" id="wspSuggestions">
+            <button class="wsp-chip" type="button" data-msg="&iquest;Qu&eacute; productos tienen?">Productos</button>
+            <button class="wsp-chip" type="button" data-msg="&iquest;Cu&aacute;l es el horario?">Horario</button>
+            <button class="wsp-chip" type="button" data-msg="&iquest;D&oacute;nde est&aacute;n ubicados?">Ubicaci&oacute;n</button>
+            <button class="wsp-chip" type="button" data-msg="&iquest;C&oacute;mo hago un pedido?">Pedidos</button>
+            <button class="wsp-chip" type="button" data-msg="&iquest;Tienen pasteles personalizados?">Pasteles</button>
+            <button class="wsp-chip" type="button" data-msg="&iquest;Cu&aacute;nto cuesta un pastel?">Precios</button>
+        </div>
+        <div class="wsp-chat__input-row">
+            <textarea class="wsp-chat__input" id="wspInput" placeholder="Escribe tu pregunta..." rows="1" aria-label="Escribe un mensaje"></textarea>
+            <button class="wsp-chat__send" id="wspSend" type="button" aria-label="Enviar mensaje">
+                <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M22 2L11 13"/><path d="M22 2L15 22 11 13 2 9l20-7z"/></svg>
+            </button>
+        </div>
+        <a class="wsp-chat__wsp-link" href="https://wa.me/51934344116?text=Hola%20Chavala%2C%20quiero%20hacer%20un%20pedido" target="_blank" rel="noopener noreferrer">Hablar con un asesor en WhatsApp</a>
+    </div>
+
     <div data-include="/assets/pages/footer.html"></div>
-    <script src="/js/main.js?v=20260623-4" defer></script>
-    <script src="/assets/pages/catalog/js_catalog.js?v=20260625-2" defer></script>
+    <script src="/js/main.js?v=20260629-4" defer></script>
+    <script src="/assets/pages/catalog/js_catalog.js?v=20260629-1" defer></script>
 </body>
 </html>

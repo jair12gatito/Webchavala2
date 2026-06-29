@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Panel de Trabajador | Panaderia Chavala</title>
+    <link rel="icon" type="image/svg+xml" href="/assets/img/ic_icon.svg">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Quicksand:wght@500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/assets/pages/employee/style_employee.css?v=20260629-2">
+</head>
+<body>
+    <div class="employee-shell">
+        <aside class="employee-sidebar" aria-label="Panel de empleado">
+            <a class="employee-brand" href="/assets/pages/employee/orders.html" aria-label="Panel de empleado Chavala">
+                <img src="/assets/img/ic_icon.svg" alt="Logo de Panaderia Chavala">
+                <span>
+                    <strong>Chavala Panaderia</strong>
+                    <small>Staff Portal</small>
+                </span>
+            </a>
+
+            <nav class="employee-nav" aria-label="Navegacion del panel">
+                <a class="employee-nav__link is-active" href="#ordenes" data-employee-tab="ordenes" aria-current="page">
+                    <svg viewBox="0 0 24 24" aria-hidden="true">
+                        <path d="M9 5h6"></path>
+                        <path d="M9 12h6"></path>
+                        <path d="M9 19h4"></path>
+                        <rect width="16" height="20" x="4" y="2" rx="2"></rect>
+                    </svg>
+                    <span>&Oacute;rdenes del d&iacute;a</span>
+                </a>
+                <a class="employee-nav__link" href="#historial" data-employee-tab="historial">
+                    <svg viewBox="0 0 24 24" aria-hidden="true">
+                        <path d="M3 12a9 9 0 1 0 3-6.7"></path>
+                        <path d="M3 3v6h6"></path>
+                    </svg>
+                    <span>Historial</span>
+                </a>
+                <a class="employee-nav__link" href="#perfil" data-employee-tab="perfil">
+                    <svg viewBox="0 0 24 24" aria-hidden="true">
+                        <path d="M20 21a8 8 0 0 0-16 0"></path>
+                        <circle cx="12" cy="7" r="4"></circle>
+                    </svg>
+                    <span>Perfil</span>
+                </a>
+            </nav>
+
+            <button class="employee-logout" type="button" data-employee-logout>
+                <svg viewBox="0 0 24 24" aria-hidden="true">
+                    <path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"></path>
+                    <path d="m16 17 5-5-5-5"></path>
+                    <path d="M21 12H9"></path>
+                </svg>
+                <span>Cerrar sesi&oacute;n</span>
+            </button>
+        </aside>
+
+        <main class="employee-main">
+            <header class="employee-topbar">
+                <span class="employee-topbar__spacer" aria-hidden="true"></span>
+                <h1 data-employee-title>Panel de Trabajador</h1>
+                <div class="employee-user" aria-label="Empleado conectado">
+                    <svg viewBox="0 0 24 24" aria-hidden="true">
+                        <path d="M20 21a8 8 0 0 0-16 0"></path>
+                        <circle cx="12" cy="7" r="4"></circle>
+                    </svg>
+                    <span data-employee-name>Empleado</span>
+                </div>
+            </header>
+
+            <section class="employee-section" data-employee-section="ordenes" aria-label="Ordenes del dia">
+            <section class="employee-stats" aria-label="Resumen de ordenes">
+                <article class="employee-stat employee-stat--pending">
+                    <div>
+                        <span>Pendientes</span>
+                        <strong data-count-pending>0</strong>
+                    </div>
+                    <span class="employee-stat__icon" aria-hidden="true">
+                        <svg viewBox="0 0 24 24">
+                            <path d="M6 2h12"></path>
+                            <path d="M6 22h12"></path>
+                            <path d="M8 2v6a4 4 0 0 0 8 0V2"></path>
+                            <path d="M8 22v-6a4 4 0 0 1 8 0v6"></path>
+                        </svg>
+                    </span>
+                </article>
+
+                <article class="employee-stat employee-stat--progress">
+                    <div>
+                        <span>En preparaci&oacute;n</span>
+                        <strong data-count-progress>0</strong>
+                    </div>
+                    <span class="employee-stat__icon" aria-hidden="true">
+                        <svg viewBox="0 0 24 24">
+                            <rect width="16" height="12" x="4" y="8" rx="2"></rect>
+                            <path d="M8 8V6a4 4 0 0 1 8 0v2"></path>
+                            <path d="M9 13h6"></path>
+                        </svg>
+                    </span>
+                </article>
+
+                <article class="employee-stat employee-stat--ready">
+                    <div>
+                        <span>Listas</span>
+                        <strong data-count-ready>0</strong>
+                    </div>
+                    <span class="employee-stat__icon" aria-hidden="true">
+                        <svg viewBox="0 0 24 24">
+                            <path d="m20 6-11 11-5-5"></path>
+                        </svg>
+                    </span>
+                </article>
+            </section>
+
+            <section class="employee-tools" aria-label="Herramientas de busqueda">
+                <label class="employee-search">
+                    <svg viewBox="0 0 24 24" aria-hidden="true">
+                        <circle cx="11" cy="11" r="7"></circle>
+                        <path d="m21 21-4.3-4.3"></path>
+                    </svg>
+                    <input type="search" placeholder="Buscar por ID o cliente...">
+                </label>
+                <button class="employee-filter" type="button">
+                    <svg viewBox="0 0 24 24" aria-hidden="true">
+                        <path d="M4 6h16"></path>
+                        <path d="M7 12h10"></path>
+                        <path d="M10 18h4"></path>
+                    </svg>
+                    <span>Filtrar</span>
+                </button>
+            </section>
+
+            <section class="employee-board" aria-label="Ordenes del dia">
+                <div class="employee-column">
+                    <header class="employee-column__header employee-column__header--pending">
+                        <span aria-hidden="true"></span>
+                        <h2>Nuevas Ordenes</h2>
+                    </header>
+                    <div class="employee-order-list" data-pending-orders></div>
+                    <article class="employee-empty-card" data-pending-empty>
+                        <div class="employee-empty-card__icon" aria-hidden="true">
+                            <svg viewBox="0 0 24 24">
+                                <path d="M20 21a8 8 0 0 0-16 0"></path>
+                                <circle cx="12" cy="7" r="4"></circle>
+                            </svg>
+                        </div>
+                        <h3>Sin &oacute;rdenes pendientes</h3>
+                        <p>Cuando entre una nueva orden aparecer&aacute; en esta columna.</p>
+                    </article>
+                </div>
+
+                <div class="employee-column">
+                    <header class="employee-column__header employee-column__header--progress">
+                        <span aria-hidden="true"></span>
+                        <h2>En Preparaci&oacute;n</h2>
+                    </header>
+                    <div class="employee-order-list" data-progress-orders></div>
+                    <article class="employee-empty-card" data-progress-empty>
+                        <div class="employee-empty-card__icon" aria-hidden="true">
+                            <svg viewBox="0 0 24 24">
+                                <path d="M20 21a8 8 0 0 0-16 0"></path>
+                                <circle cx="12" cy="7" r="4"></circle>
+                            </svg>
+                        </div>
+                        <h3>No hay pedidos en curso</h3>
+                        <p>Las &oacute;rdenes aceptadas se mostrar&aacute;n aqu&iacute; para seguir su avance.</p>
+                    </article>
+                </div>
+            </section>
+            </section>
+
+            <section class="employee-section employee-panel-section" data-employee-section="historial" hidden>
+                <div class="employee-section-heading">
+                    <span>Base de datos</span>
+                    <h2>Historial de Pedidos del D&iacute;a</h2>
+                    <p>Revisa solo los pedidos registrados hoy y busca por cliente, c&oacute;digo o estado.</p>
+                </div>
+
+                <div class="employee-history-card">
+                    <div class="employee-history-header">
+                        <label class="employee-search employee-search--compact">
+                            <svg viewBox="0 0 24 24" aria-hidden="true">
+                                <circle cx="11" cy="11" r="7"></circle>
+                                <path d="m21 21-4.3-4.3"></path>
+                            </svg>
+                            <input type="search" placeholder="Buscar pedido o cliente..." data-history-search>
+                        </label>
+                        <span class="employee-history-count" data-history-count>0 pedidos</span>
+                    </div>
+
+                    <div class="employee-history-list" data-history-list></div>
+
+                    <button class="employee-history-more" type="button" data-history-more hidden>Ver m&aacute;s</button>
+
+                    <article class="employee-empty-card employee-empty-card--wide" data-history-empty>
+                        <div class="employee-empty-card__icon" aria-hidden="true">
+                            <svg viewBox="0 0 24 24">
+                                <path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4Z"></path>
+                                <path d="M3 6h18"></path>
+                                <path d="M16 10a4 4 0 0 1-8 0"></path>
+                            </svg>
+                        </div>
+                        <h3>Sin pedidos registrados hoy</h3>
+                        <p>Cuando haya pedidos del d&iacute;a, el historial se cargar&aacute; autom&aacute;ticamente.</p>
+                    </article>
+                </div>
+            </section>
+
+            <section class="employee-section employee-panel-section" data-employee-section="perfil" hidden>
+                <div class="employee-section-heading">
+                    <span>Datos del empleado</span>
+                    <h2>Mi Perfil</h2>
+                    <p>Actualiza tus datos de contacto para mantener tu informaci&oacute;n al d&iacute;a.</p>
+                </div>
+
+                <section class="employee-profile-card" aria-label="Perfil del empleado">
+                    <header class="employee-profile-header">
+                        <div class="employee-profile-avatar" aria-hidden="true">
+                            <svg viewBox="0 0 24 24">
+                                <path d="M20 21a8 8 0 0 0-16 0"></path>
+                                <circle cx="12" cy="7" r="4"></circle>
+                            </svg>
+                        </div>
+                        <div>
+                            <h2 data-profile-title>Empleado</h2>
+                            <p data-profile-copy>Administra tus datos de contacto para el panel.</p>
+                        </div>
+                    </header>
+
+                    <form class="employee-profile-form" data-employee-profile-form novalidate>
+                        <p class="employee-form-status" data-profile-status aria-live="polite"></p>
+
+                        <label class="employee-field employee-field--full" for="employee-profile-name">
+                            <span>Nombre completo</span>
+                            <input id="employee-profile-name" name="nombre" type="text" autocomplete="name">
+                        </label>
+
+                        <div class="employee-profile-grid">
+                            <label class="employee-field" for="employee-profile-dni">
+                                <span>DNI</span>
+                                <input id="employee-profile-dni" name="dni" type="text" disabled aria-readonly="true">
+                            </label>
+
+                            <label class="employee-field" for="employee-profile-role">
+                                <span>Rol</span>
+                                <input id="employee-profile-role" name="rol" type="text" disabled aria-readonly="true">
+                            </label>
+                        </div>
+
+                        <div class="employee-profile-grid">
+                            <label class="employee-field" for="employee-profile-email">
+                                <span>Correo electr&oacute;nico</span>
+                                <input id="employee-profile-email" name="email" type="email" autocomplete="email">
+                            </label>
+
+                            <label class="employee-field" for="employee-profile-phone">
+                                <span>Celular</span>
+                                <input id="employee-profile-phone" name="celular" type="tel" inputmode="numeric" maxlength="9" autocomplete="tel">
+                            </label>
+                        </div>
+
+                        <div class="employee-profile-actions">
+                            <button class="employee-save" type="submit" disabled>Guardar cambios</button>
+                            <button class="employee-cancel" type="button" data-profile-cancel hidden>Cancelar</button>
+                        </div>
+                    </form>
+                </section>
+            </section>
+        </main>
+    </div>
+
+    <div class="employee-modal" data-employee-modal hidden>
+        <div class="employee-modal__backdrop" data-modal-close></div>
+        <section class="employee-modal__dialog" role="dialog" aria-modal="true" aria-labelledby="employee-modal-title" aria-describedby="employee-modal-message">
+            <div class="employee-modal__icon" data-modal-icon aria-hidden="true">
+                <svg viewBox="0 0 24 24">
+                    <path d="m20 6-11 11-5-5"></path>
+                </svg>
+            </div>
+            <h2 id="employee-modal-title" data-modal-title>Listo</h2>
+            <p id="employee-modal-message" data-modal-message>Los cambios se guardaron correctamente.</p>
+            <button type="button" class="employee-modal__button" data-modal-close>Aceptar</button>
+        </section>
+    </div>
+
+    <div class="employee-modal" data-reject-modal hidden>
+        <div class="employee-modal__backdrop" data-reject-cancel></div>
+        <section class="employee-modal__dialog employee-modal__dialog--reject" role="dialog" aria-modal="true" aria-labelledby="reject-modal-title">
+            <div class="employee-modal__icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24">
+                    <path d="M12 9v4"></path>
+                    <path d="M12 17h.01"></path>
+                    <path d="M10.3 3.9 2.5 18a2 2 0 0 0 1.8 3h15.4a2 2 0 0 0 1.8-3L13.7 3.9a2 2 0 0 0-3.4 0Z"></path>
+                </svg>
+            </div>
+            <h2 id="reject-modal-title">Motivo del rechazo</h2>
+            <p>Escribe una explicaci&oacute;n clara para que el cliente pueda verla.</p>
+            <textarea data-reject-reason placeholder="Ej. No contamos con stock suficiente para completar el pedido." rows="4"></textarea>
+            <p class="employee-form-status" data-reject-status aria-live="polite"></p>
+            <div class="employee-modal__actions">
+                <button type="button" class="employee-modal__button employee-modal__button--ghost" data-reject-cancel>Cancelar</button>
+                <button type="button" class="employee-modal__button" data-reject-confirm>Rechazar pedido</button>
+            </div>
+        </section>
+    </div>
+
+    <script src="/assets/pages/employee/orders.js?v=20260629-3" defer></script>
+</body>
+</html>

@@ -5,6 +5,22 @@ const passwordToggle = document.querySelector("[data-toggle-password]");
 const loginSubmit = loginForm?.querySelector(".login-submit");
 
 const loginApiUrl = "http://localhost:3000/api/auth/login";
+const sessionMaxIdleMs = 30 * 60 * 1000;
+
+const saveUserSession = (user) => {
+    const now = Date.now();
+
+    sessionStorage.removeItem("chavalaUser");
+    sessionStorage.removeItem("chavalaLastActivity");
+    sessionStorage.removeItem("chavalaExpiresAt");
+    localStorage.removeItem("chavalaUser");
+    localStorage.removeItem("chavalaLastActivity");
+    localStorage.removeItem("chavalaExpiresAt");
+
+    localStorage.setItem("chavalaUser", JSON.stringify(user || {}));
+    localStorage.setItem("chavalaLastActivity", String(now));
+    localStorage.setItem("chavalaExpiresAt", String(now + sessionMaxIdleMs));
+};
 
 const setLoginStatus = (message, type = "error") => {
     if (!loginStatus) {
@@ -43,7 +59,6 @@ loginForm?.addEventListener("submit", async (event) => {
     const formData = new FormData(loginForm);
     const email = String(formData.get("email") || "").trim();
     const password = String(formData.get("password") || "");
-    const shouldRemember = formData.get("remember") === "on";
 
     if (!email || !password) {
         setLoginStatus("Completa tu correo y contrasena.");
@@ -69,9 +84,7 @@ loginForm?.addEventListener("submit", async (event) => {
         }
 
         setLoginStatus("Sesion iniciada. Redirigiendo...", "success");
-        sessionStorage.removeItem("chavalaUser");
-        localStorage.removeItem("chavalaUser");
-        (shouldRemember ? localStorage : sessionStorage).setItem("chavalaUser", JSON.stringify(payload.user || {}));
+        saveUserSession(payload.user || {});
         window.location.href = payload.redirectUrl || "/assets/pages/catalog/catalog.html";
     } catch (error) {
         setLoginStatus(error.message || "No se pudo iniciar sesion. Revisa tus datos.");

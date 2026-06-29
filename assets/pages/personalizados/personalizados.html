@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pasteles Personalizados | Panaderia Chavala</title>
+    <link rel="icon" type="image/svg+xml" href="/assets/img/ic_icon.svg">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Quicksand:wght@500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/css/style.css?v=20260629-3">
+    <link rel="stylesheet" href="/assets/pages/personalizados/style_personalizados.css?v=20260626-3">
+</head>
+<body>
+    <div data-include="/assets/pages/header.html"></div>
+
+    <main class="custom-page">
+        <section class="custom-hero" aria-labelledby="custom-title">
+            <div class="custom-hero__content">
+                <span class="custom-eyebrow">Hecho a tu estilo</span>
+                <h1 id="custom-title">Pasteles Personalizados</h1>
+                <p>Cu&eacute;ntanos la ocasi&oacute;n, el sabor que te provoca y el dise&ntilde;o que tienes en mente. En Chavala preparamos tortas especiales con detalle, frescura y ese toque dulce que hace memorable cada celebraci&oacute;n.</p>
+                <a class="custom-hero__button" href="#solicitud">
+                    <span>Dise&ntilde;ar mi pastel</span>
+                    <svg viewBox="0 0 24 24" aria-hidden="true">
+                        <path d="M5 12h14"></path>
+                        <path d="m13 6 6 6-6 6"></path>
+                    </svg>
+                </a>
+            </div>
+
+            <figure class="custom-hero__media">
+                <img src="https://sfhrxckcjbprkepdlpcy.supabase.co/storage/v1/object/public/img/img_personalizacion_principal.webp" alt="Pastel personalizado decorado de Chavala">
+            </figure>
+        </section>
+
+        <section class="custom-process" aria-labelledby="process-title">
+            <div class="custom-section-heading">
+                <span class="custom-eyebrow">Proceso</span>
+                <h2 id="process-title">As&iacute; armamos tu pedido</h2>
+                <p>Tres pasos sencillos para pasar de una idea a una torta lista para celebrar.</p>
+            </div>
+
+            <div class="process-grid">
+                <article class="process-card">
+                    <span class="process-card__icon" aria-hidden="true">
+                        <svg viewBox="0 0 24 24">
+                            <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8Z"></path>
+                            <path d="M14 2v6h6"></path>
+                            <path d="M8 13h8"></path>
+                            <path d="M8 17h5"></path>
+                        </svg>
+                    </span>
+                    <h3>1. Detalles</h3>
+                    <p>Nos dices tama&ntilde;o, fecha, sabor, colores, tem&aacute;tica y cualquier referencia importante.</p>
+                </article>
+
+                <article class="process-card">
+                    <span class="process-card__icon" aria-hidden="true">
+                        <svg viewBox="0 0 24 24">
+                            <path d="M20 6 9 17l-5-5"></path>
+                            <path d="M21 12a9 9 0 1 1-4.6-7.9"></path>
+                        </svg>
+                    </span>
+                    <h3>2. Confirmamos</h3>
+                    <p>Revisamos la idea, afinamos el dise&ntilde;o y preparamos una cotizaci&oacute;n clara.</p>
+                </article>
+
+                <article class="process-card">
+                    <span class="process-card__icon" aria-hidden="true">
+                        <svg viewBox="0 0 24 24">
+                            <path d="M5.8 11.3 2 22l10.7-3.8"></path>
+                            <path d="M4 3h.01"></path>
+                            <path d="M22 8h.01"></path>
+                            <path d="M15 2h.01"></path>
+                            <path d="M22 20h.01"></path>
+                            <path d="m22 2-2.2.7a2.9 2.9 0 0 0-1.8 1.8L17.3 7"></path>
+                            <path d="m11 13 4-4"></path>
+                            <path d="m8 16 1.5-4.5L14 10l-1.5 4.5Z"></path>
+                        </svg>
+                    </span>
+                    <h3>3. Celebras</h3>
+                    <p>Recibes tu pastel fresco, personalizado y listo para acompa&ntilde;ar tu momento especial.</p>
+                </article>
+            </div>
+        </section>
+
+        <section class="custom-request" id="solicitud" aria-labelledby="request-title">
+            <form class="custom-form" aria-label="Formulario visual para pastel personalizado">
+                <div class="custom-form__intro">
+                    <span class="custom-eyebrow">Solicitud</span>
+                    <h2 id="request-title">Dise&ntilde;a tu pastel</h2>
+                    <p>Completa la idea con la mayor cantidad de detalles. Por ahora este formulario es visual y no env&iacute;a informaci&oacute;n.</p>
+                </div>
+
+                <div class="form-grid">
+                    <label>
+                        <span>Tipo de base</span>
+                        <select>
+                            <option>Queque tradicional</option>
+                            <option>Tres leches</option>
+                            <option>Chocolate</option>
+                            <option>Moka</option>
+                        </select>
+                    </label>
+
+                    <label>
+                        <span>Sabor principal</span>
+                        <select>
+                            <option>Vainilla con frutos rojos</option>
+                            <option>Chocolate con manjar</option>
+                            <option>Selva negra</option>
+                            <option>L&uacute;cuma</option>
+                        </select>
+                    </label>
+                </div>
+
+                <fieldset class="size-options">
+                    <legend>Tama&ntilde;o</legend>
+                    <label>
+                        <input type="radio" name="size" checked>
+                        <strong>10</strong>
+                        <span>personas</span>
+                    </label>
+                    <label>
+                        <input type="radio" name="size">
+                        <strong>15</strong>
+                        <span>personas</span>
+                    </label>
+                    <label>
+                        <input type="radio" name="size">
+                        <strong>20</strong>
+                        <span>personas</span>
+                    </label>
+                    <label>
+                        <input type="radio" name="size">
+                        <strong>30+</strong>
+                        <span>personas</span>
+                    </label>
+                </fieldset>
+
+                <label class="form-full">
+                    <span>Decoraci&oacute;n y detalles especiales</span>
+                    <textarea rows="6" placeholder="Ej. Pastel rosado con flores, nombre en dorado, tem&aacute;tica de cumplea&ntilde;os y sin frutos secos."></textarea>
+                </label>
+
+                <div class="form-grid">
+                    <label>
+                        <span>Fecha del evento</span>
+                        <input type="date">
+                    </label>
+
+                    <label>
+                        <span>Correo de contacto</span>
+                        <input type="email" placeholder="tu@correo.com">
+                    </label>
+                </div>
+
+                <button class="custom-submit" type="button">
+                    <span>Enviar solicitud</span>
+                    <svg viewBox="0 0 24 24" aria-hidden="true">
+                        <path d="m5 12 14-7-7 14-2-5Z"></path>
+                        <path d="m12 12-2 2"></path>
+                    </svg>
+                </button>
+            </form>
+
+            <aside class="custom-gallery" aria-labelledby="gallery-title">
+                <div>
+                    <span class="custom-eyebrow">Inspiraci&oacute;n</span>
+                    <h2 id="gallery-title">Ideas para tu dise&ntilde;o</h2>
+                </div>
+
+                <div class="gallery-stack">
+                    <figure class="gallery-card gallery-card--large">
+                        <img src="https://sfhrxckcjbprkepdlpcy.supabase.co/storage/v1/object/public/img/img_personalizacion_01.webp" alt="Pastel decorado con estilo especial">
+                        <figcaption>Celebraciones especiales</figcaption>
+                    </figure>
+                    <div class="gallery-pair">
+                        <figure class="gallery-card">
+                            <img src="https://sfhrxckcjbprkepdlpcy.supabase.co/storage/v1/object/public/img/img_personalizacion_02.webp" alt="Bocaditos dulces para mesa de eventos">
+                        </figure>
+                        <figure class="gallery-card">
+                            <img src="https://sfhrxckcjbprkepdlpcy.supabase.co/storage/v1/object/public/img/img_personalizacion_03.webp" alt="Atencion de eventos Chavala">
+                        </figure>
+                    </div>
+                </div>
+            </aside>
+        </section>
+    </main>
+
+    <button class="wsp-fab" id="wspFab" type="button" aria-label="Abrir chat de Chavala" aria-expanded="false">
+        <svg viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/>
+            <path d="M12 0C5.373 0 0 5.373 0 12c0 2.09.537 4.05 1.476 5.757L.057 23.882a.5.5 0 0 0 .614.612l6.281-1.634A11.945 11.945 0 0 0 12 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.818a9.818 9.818 0 0 1-4.988-1.363l-.357-.213-3.728.969.997-3.623-.234-.373A9.768 9.768 0 0 1 2.182 12C2.182 6.578 6.578 2.182 12 2.182S21.818 6.578 21.818 12 17.422 21.818 12 21.818z"/>
+        </svg>
+        <span class="wsp-fab__badge" id="wspBadge">1</span>
+    </button>
+
+    <div class="wsp-chat" id="wspChat" role="dialog" aria-label="Chat con Chavala Bot" aria-modal="false">
+        <div class="wsp-chat__head">
+            <div class="wsp-chat__avatar" aria-hidden="true">
+                <svg viewBox="0 0 24 24">
+                    <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/>
+                    <path d="M12 0C5.373 0 0 5.373 0 12c0 2.09.537 4.05 1.476 5.757L.057 23.882a.5.5 0 0 0 .614.612l6.281-1.634A11.945 11.945 0 0 0 12 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.818a9.818 9.818 0 0 1-4.988-1.363l-.357-.213-3.728.969.997-3.623-.234-.373A9.768 9.768 0 0 1 2.182 12C2.182 6.578 6.578 2.182 12 2.182S21.818 6.578 21.818 12 17.422 21.818 12 21.818z"/>
+                </svg>
+            </div>
+            <div class="wsp-chat__info">
+                <span class="wsp-chat__name">Chavala Bot</span>
+                <span class="wsp-chat__status">En l&iacute;nea ahora</span>
+            </div>
+            <button class="wsp-chat__close" id="wspClose" type="button" aria-label="Cerrar chat">
+                <svg viewBox="0 0 24 24" aria-hidden="true"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+            </button>
+        </div>
+        <div class="wsp-chat__bg" id="wspMessages" aria-live="polite"></div>
+        <div class="wsp-suggestions" id="wspSuggestions">
+            <button class="wsp-chip" type="button" data-msg="&iquest;Qu&eacute; productos tienen?">Productos</button>
+            <button class="wsp-chip" type="button" data-msg="&iquest;Cu&aacute;l es el horario?">Horario</button>
+            <button class="wsp-chip" type="button" data-msg="&iquest;D&oacute;nde est&aacute;n ubicados?">Ubicaci&oacute;n</button>
+            <button class="wsp-chip" type="button" data-msg="&iquest;C&oacute;mo hago un pedido?">Pedidos</button>
+            <button class="wsp-chip" type="button" data-msg="&iquest;Tienen pasteles personalizados?">Pasteles</button>
+            <button class="wsp-chip" type="button" data-msg="&iquest;Cu&aacute;nto cuesta un pastel?">Precios</button>
+        </div>
+        <div class="wsp-chat__input-row">
+            <textarea class="wsp-chat__input" id="wspInput" placeholder="Escribe tu pregunta..." rows="1" aria-label="Escribe un mensaje"></textarea>
+            <button class="wsp-chat__send" id="wspSend" type="button" aria-label="Enviar mensaje">
+                <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M22 2L11 13"/><path d="M22 2L15 22 11 13 2 9l20-7z"/></svg>
+            </button>
+        </div>
+        <a class="wsp-chat__wsp-link" href="https://wa.me/51934344116?text=Hola%20Chavala%2C%20quiero%20hacer%20un%20pedido" target="_blank" rel="noopener noreferrer">Hablar con un asesor en WhatsApp</a>
+    </div>
+
+    <div data-include="/assets/pages/footer.html"></div>
+    <script src="/js/main.js?v=20260629-4" defer></script>
+</body>
+</html>
