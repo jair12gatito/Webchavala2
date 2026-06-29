@@ -531,6 +531,8 @@ document.getElementById("saveProveedor")
 
     }
 
+
+    
 });
 window.confirmarEliminarProducto = async (id, nombre) => {
     if (!confirm(`¿Eliminar "${nombre}"? Esta acción no se puede deshacer.`)) return;
