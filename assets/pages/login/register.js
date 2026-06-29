@@ -5,7 +5,7 @@ const registerDniInput = document.querySelector("#register-dni");
 const registerPhoneInput = document.querySelector("#register-phone");
 const registerPasswordToggles = document.querySelectorAll("[data-toggle-password]");
 
-const registerApiUrl = "http://localhost:3000/api/auth/register";
+const registerApiUrl = "https://webchavala2-3xja.onrender.com/api/auth/register";
 
 const setRegisterStatus = (message, type = "error") => {
     if (!registerStatus) {
