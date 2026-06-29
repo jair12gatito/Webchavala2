@@ -382,7 +382,7 @@ document.getElementById("saveEmpleado").addEventListener("click", async () => {
     btn.textContent = "Registrando...";
 
     try {
-        await apiFetch("/api/auth/empleados", {
+        await apiFetch("/api/admin/empleados", {
             method: "POST",
             body: JSON.stringify({
                 nombre, email,
