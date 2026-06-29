@@ -4,7 +4,7 @@ const passwordInput = document.querySelector("#login-password");
 const passwordToggle = document.querySelector("[data-toggle-password]");
 const loginSubmit = loginForm?.querySelector(".login-submit");
 
-const loginApiUrl = "http://localhost:3000/api/auth/login";
+const loginApiUrl = "https://webchavala2-3xja.onrender.com/api/auth/login";
 const sessionMaxIdleMs = 30 * 60 * 1000;
 
 const saveUserSession = (user) => {
