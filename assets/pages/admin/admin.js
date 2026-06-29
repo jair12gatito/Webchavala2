@@ -1,4 +1,4 @@
-const API = "http://localhost:3000";
+const API = "https://webchavala2-3xja.onrender.com";
 const getAdminUser = () => {
     try {
         return JSON.parse(
@@ -532,7 +532,7 @@ document.getElementById("saveProveedor")
     }
 
 
-    
+
 });
 window.confirmarEliminarProducto = async (id, nombre) => {
     if (!confirm(`¿Eliminar "${nombre}"? Esta acción no se puede deshacer.`)) return;
