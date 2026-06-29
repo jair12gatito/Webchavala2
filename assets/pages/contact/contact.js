@@ -9,7 +9,7 @@
     const subjectSelect = contactForm?.querySelector('select[name="asunto"]');
     const otherSubjectField = document.querySelector("[data-other-subject-field]");
     const otherSubjectInput = contactForm?.querySelector('input[name="otroAsunto"]');
-    const trackingApiUrl = "http://localhost:3000/api/pedidos/seguimiento";
+    const trackingApiUrl = "https://webchavala2-3xja.onrender.com/api/pedidos/seguimiento";
     const contactEmail = "ContactoChavala@chavala.com";
 
     const setTrackingState = (state = "") => {
