@@ -1,6 +1,6 @@
 const profileApiUrl = "https://webchavala2-3xja.onrender.com/api/usuarios/perfil";
 const passwordApiUrl = "https://webchavala2-3xja.onrender.com/api/usuarios/password";
-const purchasesApiUrl = "https://webchavala2-3xja.onrender.comapi/clientes/compras";
+const purchasesApiUrl = "https://webchavala2-3xja.onrender.com/api/clientes/compras";
 const accountNavLinks = document.querySelectorAll("[data-account-tab]");
 const accountSections = document.querySelectorAll("[data-account-section]");
 const profileForm = document.querySelector("[data-profile-form]");
